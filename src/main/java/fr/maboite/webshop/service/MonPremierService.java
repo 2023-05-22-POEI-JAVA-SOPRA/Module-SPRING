@@ -9,13 +9,16 @@ public class MonPremierService {
 	@Autowired
 	private MonPremierDao monPremierDao;
 
+	//Constructeur
+	public MonPremierService() {
+		System.out.println("Je vis !!! FrancoisC");
+	}
+	
 	public void coucou() {
-		System.out.println("Je suis le service");
+		System.out.println("Je suis le service FrancoisC");
 	}
 
-	public MonPremierService() {
-		System.out.println("Je vis !!!");
-	}
+
 
 	public MonPremierDao getMonPremierDao() {
 		return monPremierDao;
