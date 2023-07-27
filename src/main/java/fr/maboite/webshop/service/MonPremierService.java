@@ -9,16 +9,23 @@ public class MonPremierService {
 	@Autowired
 	private MonPremierDao monPremierDao;
 
+	@Autowired
+	private MonSecondService monSecondService;
+
 	public void coucou() {
-		System.out.println("Je suis le service");
+		System.out.println("Coucou du service");
 	}
 
 	public MonPremierService() {
-		System.out.println("Je vis !!!");
+		System.out.println("Je vis! 1s");
 	}
 
 	public MonPremierDao getMonPremierDao() {
 		return monPremierDao;
+	}
+
+	public MonSecondService getMonSecondService() {
+		return monSecondService;
 	}
 
 }
