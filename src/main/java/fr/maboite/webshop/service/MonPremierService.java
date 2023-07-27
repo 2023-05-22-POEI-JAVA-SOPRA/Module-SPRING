@@ -1,31 +1,22 @@
 package fr.maboite.webshop.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class MonPremierService {
 
-	@Autowired
+//	@Autowired
+	
 	private MonPremierDao monPremierDao;
 	
-	@Autowired
-	private MonDeuxiemeService deuxiemeServiceInFirst;
-	
-	
-
-	public MonDeuxiemeService getDeuxiemeServiceInFirst() {
-		return deuxiemeServiceInFirst;
-	}
-
-	public void setDeuxiemeServiceInFirst(MonDeuxiemeService deuxiemeServiceInFirst) {
-		this.deuxiemeServiceInFirst = deuxiemeServiceInFirst;
-	}
-
 	public void coucou() {
 		System.out.println("Je suis le service");
 	}
-
+	
+	
 	public MonPremierService() {
 		System.out.println("Je vis !!!");
 	}
@@ -33,5 +24,4 @@ public class MonPremierService {
 	public MonPremierDao getMonPremierDao() {
 		return monPremierDao;
 	}
-	
 }
