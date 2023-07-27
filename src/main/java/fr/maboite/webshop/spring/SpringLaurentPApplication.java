@@ -6,7 +6,9 @@ import fr.maboite.webshop.service.MonPremierDaoLP;
 import fr.maboite.webshop.service.MonPremierServiceLP;
 import fr.maboite.webshop.service.MonSecondDaoLpSERVICE;
 import fr.maboite.webshop.service.MonSecondServiceLPSERVICE;
+
 import fr.maboite.webshop.spring.simple.configuration.SpringSimpleConfLP;
+
 
 public class SpringLaurentPApplication {
 	public static void main(String[] args) {
@@ -17,6 +19,7 @@ public class SpringLaurentPApplication {
 						MonPremierDaoLP.class,MonSecondServiceLPSERVICE.class,
 						MonSecondDaoLpSERVICE.class)) {
 			
+
 			System.out.println("Contexte Spring démarré");
 
 			// Récupération du bean instancié par Spring (et potentiellement rattaché à
