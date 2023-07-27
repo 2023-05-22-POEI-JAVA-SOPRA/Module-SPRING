@@ -43,6 +43,9 @@ public class Example  {
 	public void setTaille(Float taille) {
 		this.taille = taille;
 	}
-
+	
+	public void giveExample() {
+		System.out.println("Ceci est un exemple");
+	}
 
 }

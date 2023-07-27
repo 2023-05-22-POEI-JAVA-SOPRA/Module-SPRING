@@ -1,8 +1,8 @@
 package fr.maboite.webshop.service;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class MonSecondService {
 
 	public void coucouDeux() {

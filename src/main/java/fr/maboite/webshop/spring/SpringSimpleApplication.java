@@ -5,6 +5,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import fr.maboite.webshop.service.MonPremierDao;
 import fr.maboite.webshop.service.MonPremierService;
 import fr.maboite.webshop.service.MonSecondService;
+import fr.maboite.webshop.spring.real.configuration.MaConfigurationFacile;
 
 public class SpringSimpleApplication {
 
@@ -12,17 +13,15 @@ public class SpringSimpleApplication {
 
 		// Démarre le contexte Spring
 		try (AnnotationConfigApplicationContext appContext = new AnnotationConfigApplicationContext(
-				MonPremierService.class, MonPremierDao.class, MonSecondService.class)) {
+				MaConfigurationFacile.class)) {
 			System.out.println("Contexte Spring démarré");
 
 			// Récupération du bean instancié par Spring (et potentiellement rattaché à
 			// d'autres beans Spring)
-			MonPremierService monPremierBeanSpring = appContext.getBean(MonPremierService.class);
+			MaConfigurationFacile monPremierBeanSpring = appContext.getBean(MaConfigurationFacile.class);
 
 			// Opérations sur les objets ...
-			monPremierBeanSpring.coucou();
-			monPremierBeanSpring.getMonPremierDao().coucou();
-			monPremierBeanSpring.getMonSecondService().coucouDeux();
+			monPremierBeanSpring.example().giveExample();
 
 		}
 
