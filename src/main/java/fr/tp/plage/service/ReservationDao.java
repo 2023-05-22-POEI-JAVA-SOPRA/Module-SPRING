@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 import org.springframework.stereotype.Component;
 
+import fr.tp.plage.entity.DemandeReservation;
 import fr.tp.plage.entity.Reservation;
 
 @Component
@@ -26,6 +27,27 @@ public class ReservationDao {
 		return this.reservations;
 		
 		return null;
+	}
+	
+	public Reservation getDemandeRes(DemandeReservation demandeReservation) {
+		
+		Reservation res = new Reservation();
+		String plage = demandeReservation.getPlage();
+		String complet = demandeReservation.getHotel().substring(0, 4);
+		String plageNul = plage.substring(plage.length()-6, plage.length()-1);
+		
+		if(complet.equals("super") || plage.equals(null) || !(plageNul.equals("plage")) ) {
+			return null;
+		}else {
+			
+			res.setNom(demandeReservation.getNom());
+			res.setDebut(demandeReservation.getDebut());
+			res.setFin(demandeReservation.getFin());
+			
+			return res;
+		}
+		
+		
 	}
 
 }
