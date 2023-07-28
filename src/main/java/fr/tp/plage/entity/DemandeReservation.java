@@ -9,6 +9,23 @@ public class DemandeReservation {
 	private LocalDate fin;
 	private String plage;
 	private String hotel;
+	
+	
+	public DemandeReservation(String nom, LocalDate debut, LocalDate fin, String plage, String hotel) {
+		
+		this.nom = nom;
+		this.debut = debut;
+		this.fin = fin;
+		this.plage = plage;
+		this.hotel = hotel;
+	}
+	
+	
+	public DemandeReservation() {
+		
+	}
+
+
 	public String getNom() {
 		return nom;
 	}

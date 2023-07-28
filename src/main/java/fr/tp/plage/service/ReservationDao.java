@@ -34,9 +34,10 @@ public class ReservationDao {
 		Reservation res = new Reservation();
 		String plage = demandeReservation.getPlage();
 		String complet = demandeReservation.getHotel().substring(0, 4);
-		String plageNul = plage.substring(plage.length()-6, plage.length()-1);
+		String plageNul = plage.substring(plage.length()-5, plage.length());
+		//System.out.println(plageNul);
 		
-		if(complet.equals("super") || plage.equals(null) || !(plageNul.equals("plage")) ) {
+		if(complet.equals("super") || plage.equals(null) || !plageNul.equals("plage") ) {
 			return null;
 		}else {
 			
