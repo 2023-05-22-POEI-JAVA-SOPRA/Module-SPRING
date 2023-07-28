@@ -27,13 +27,20 @@ public class SpringSimpleApplication {
 		 */
 		try (AnnotationConfigApplicationContext appContext 
 				= new AnnotationConfigApplicationContext(SpringSimpleConfiguration.class)) {
-			System.out.println("Contexte Spring démarré");
-
-			
-			appContext.getBean(MonPremierService.class).coucou();
-			appContext.getBean(MyFirstService.class).coucou();
-			appContext.getBean(MySecondService.class).coucou();
+			System.out.println("Contexte est démarré");
+         
+		MonPremierService Varibale1 =appContext.getBean(MonPremierService.class);
+		
+		System.out.println("le nom de Varibale1 est :"+Varibale1.getVariableconfigure());
+		Varibale1.coucou();
+		//	appContext.getBean(MonPremierService.class).coucou();
+		//	appContext.getBean(MyFirstService.class).coucou();
+		//	appContext.getBean(MySecondService.class).coucou();
 			appContext.getBean(MonPremierDao.class).coucou();
+			
+			//prtotype
+			MonPremierService Varibale2 =appContext.getBean(MonPremierService.class);
+			System.out.println("le nom de Varibale2 est :"+Varibale2.getNom());
 		}
 		 
 
