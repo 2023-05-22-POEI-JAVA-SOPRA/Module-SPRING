@@ -5,6 +5,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import fr.maboite.webshop.service.MonPremierDao;
 import fr.maboite.webshop.service.MonPremierService;
 
+
 public class SpringSimpleApplication {
 
 	public static void main(String[] args) {
@@ -17,10 +18,11 @@ public class SpringSimpleApplication {
 			// Récupération du bean instancié par Spring (et potentiellement rattaché à
 			// d'autres beans Spring)
 			MonPremierService monPremierBeanSpring = appContext.getBean(MonPremierService.class);
-
+			
 			// Opérations sur les objets ...
 			monPremierBeanSpring.coucou();
 			monPremierBeanSpring.getMonPremierDao().coucou();
+
 		}
 
 	}
