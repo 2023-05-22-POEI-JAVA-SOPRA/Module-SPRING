@@ -1,9 +1,13 @@
 package fr.maboite.webshop.spring;
 
+import java.time.LocalDate;
+
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import fr.maboite.plage.service.HotelServices;
+import fr.maboite.plage.service.ReservationServices;
 import fr.maboite.webshop.model.HotelPojo;
+import fr.maboite.webshop.model.ReservationPojo;
 import fr.maboite.webshop.spring.simple.configuration.PlageSpringConfig;
 
 public class PlageContextSpringMain {
@@ -22,6 +26,17 @@ public class PlageContextSpringMain {
             
             
 			myHotel.save(hotel);
+			
+// Pour réservation
+			ReservationServices myResa = appContext.getBean(ReservationServices.class);
+			
+			// Création de l'objet sans Spring pour les entités
+            ReservationPojo resa = new ReservationPojo();
+            resa.setId(1);
+            resa.setBegin(LocalDate.of(2023, 8, 2));
+            resa.setEnd(LocalDate.of(2023, 8, 15));
+            
+			System.out.println(myResa.save(resa));
 		}
 	}
 }
