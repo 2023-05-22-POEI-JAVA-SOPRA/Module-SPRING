@@ -1,6 +1,5 @@
 package fr.maboite.webshop.spring;
 
-
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -17,16 +16,39 @@ public class StartAppAtConfiguration {
 		try (AnnotationConfigApplicationContext appContext = new AnnotationConfigApplicationContext()) {
 			System.out.println("Contexte Spring started");
 			{
-				
+
 				appContext.register(SpringSimpleConfiguration.class);
 				appContext.refresh();
-				MyService myService  = appContext.getBean(MyService.class);
+				// TP1
+//				MyService myService  = appContext.getBean(MyService.class);
+//				
+//				myService.hello();
+//				
+//				UserService userService = appContext.getBean(UserService.class);
+//				userService.hello();
+
+				// TP2
+//				UserService userService = appContext.getBean(UserService.class);
+//				System.out.println(userService.getMinAge());
+//				userService.setMinAge(18);
+//				System.out.println(userService.getMinAge());
+
+				// TP2 Bonus
+
+				UserService userService1 = appContext.getBean(UserService.class);
+				UserService userService2 = appContext.getBean(UserService.class);
+
+				System.out.println("userService1 minAge :" + userService1.getMinAge());
+				System.out.println("userService2 minAge :" + userService2.getMinAge());
+				userService1.setMinAge(100);
+				System.out.println("userService1 after reset user 1 ! minAge :" + userService1.getMinAge());
+				System.out.println("userService2 after reset user 1 ! minAge :" + userService2.getMinAge());
 				
-				myService.hello();
+				//Avec Scope "singleton" ou sans scope -->True
+				//Avec Scope "protoype" -> false
+				System.out.println("Same instance in context ? : " + (userService1==userService2 ));
+
 				
-				UserService userService = appContext.getBean(UserService.class);
-				
-				userService.hello();
 				
 				
 			}

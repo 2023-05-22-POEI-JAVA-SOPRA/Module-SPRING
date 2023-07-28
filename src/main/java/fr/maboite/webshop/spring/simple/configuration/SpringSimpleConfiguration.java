@@ -3,6 +3,7 @@ package fr.maboite.webshop.spring.simple.configuration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 import fr.maboite.webshop.service.MyService;
 import fr.maboite.webshop.service.UserService;
@@ -14,7 +15,8 @@ import fr.maboite.webshop.service.UserService;
 //Scanne les composants trouvés dans le
 //package fourni en paramètre
 @ComponentScan("fr.maboite.webshop.service")
-public class SpringSimpleConfiguration {
+@PropertySource("classpath:tp-application.properties")
+public class SpringSimpleConfiguration {		
 
 //	@Bean
 //	public MyService createService() {
