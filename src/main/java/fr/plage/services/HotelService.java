@@ -12,15 +12,15 @@ public class HotelService {
 	@Autowired
 	private HotelDao hotDao;
 	
-	public Hotel create(Hotel hotervation) {
-		return this.hotDao.save(hotervation);
+	public Hotel create(Hotel hot) {
+		return this.hotDao.save(hot);
 	}
 	
-	public void getById(Integer id) {
-		System.out.println(this.hotDao.getById(id));
+	public String getById(Integer id) {
+		return this.hotDao.getById(id);
 	}
 	
-	public void delById(Integer id) {
-		System.out.println(this.hotDao.delById(id));
+	public String delById(Integer id) {
+		return this.hotDao.delById(id);
 	}
 }

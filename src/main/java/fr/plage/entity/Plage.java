@@ -14,6 +14,9 @@ public class Plage {
 		this.nom = plage.nom;
 	}
 
+	public Plage() {
+	}
+
 	public Integer getIdPlage() {
 		return idPlage;
 	}
@@ -28,6 +31,11 @@ public class Plage {
 
 	public void setNom(String nom) {
 		this.nom = nom;
+	}
+
+	@Override
+	public String toString() {
+		return "Plage [idPlage=" + idPlage + ", nom=" + nom + "]";
 	}
 
 }

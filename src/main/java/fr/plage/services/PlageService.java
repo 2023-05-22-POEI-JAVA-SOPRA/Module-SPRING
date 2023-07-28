@@ -11,16 +11,16 @@ public class PlageService {
 
 	@Autowired
 	private PlageDao plageDao;
-	
+
 	public Plage create(Plage plageervation) {
 		return this.plageDao.save(plageervation);
 	}
-	
-	public void getById(Integer id) {
-		System.out.println(this.plageDao.getById(id));
+
+	public String getById(Integer id) {
+		return this.plageDao.getById(id);
 	}
-	
-	public void delById(Integer id) {
-		System.out.println(this.plageDao.delById(id));
+
+	public String delById(Integer id) {
+		return this.plageDao.delById(id);
 	}
 }

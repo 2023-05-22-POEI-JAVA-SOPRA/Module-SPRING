@@ -8,15 +8,15 @@ public class HotelDao {
 
 	public Hotel save(Hotel hotel) {
 		Hotel savedRes = new Hotel(hotel);
-		System.out.println("Une réservation a été créée : " + savedRes.toString());
+		System.out.println("Une réservation a été crée : " + savedRes.toString());
 		return savedRes;
 	}
 
 	public String getById(Integer id) {
-		return "Hotel numéro : " + id + " a été trouvée.";
+		return "Hotel numéro : " + id + " a été trouvé.";
 	}
 
 	public String delById(Integer id) {
-		return "Hotel numéro : " + id + " a été supprimée.";
+		return "Hotel numéro : " + id + " a été supprimé.";
 	}
 }

@@ -16,11 +16,11 @@ public class ReservationService {
 		return this.resDao.save(reservation);
 	}
 	
-	public void getById(Integer id) {
-		System.out.println(this.resDao.getById(id));
+	public String getById(Integer id) {
+		return this.resDao.getById(id);
 	}
 	
-	public void delById(Integer id) {
-		System.out.println(this.resDao.delById(id));
+	public String delById(Integer id) {
+		return this.resDao.delById(id);
 	}
 }

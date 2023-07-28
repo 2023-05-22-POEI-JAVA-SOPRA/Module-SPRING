@@ -62,4 +62,14 @@ public class Reservation {
 		this.fin = reservation.fin;
 	}
 
+	@Override
+	public String toString() {
+		return "Reservation [idReservation=" + idReservation + ", nom=" + nom + ", debut=" + debut + ", fin=" + fin
+				+ "]";
+	}
+
+	public Reservation() {
+		super();
+	}
+
 }

@@ -17,6 +17,9 @@ public class Hotel {
 		this.ville = hotel.ville;
 	}
 
+	public Hotel() {
+	}
+
 	public Integer getIdHotel() {
 		return idHotel;
 	}
@@ -39,6 +42,11 @@ public class Hotel {
 
 	public void setVille(String ville) {
 		this.ville = ville;
+	}
+
+	@Override
+	public String toString() {
+		return "Hotel [idHotel=" + idHotel + ", nom=" + nom + ", ville=" + ville + "]";
 	}
 
 }
