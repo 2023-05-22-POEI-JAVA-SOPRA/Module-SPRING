@@ -14,11 +14,11 @@ public class Main {
 			//System.out.println("Contexte Spring démarré");
 
 			
-			SpringSimpleConfiguration monBeanSpring = appContext.getBean(SpringSimpleConfiguration.class);
+			//SpringSimpleConfiguration monBeanSpring = appContext.getBean(SpringSimpleConfiguration.class);
 			MonService monBeanService = appContext.getBean(MonService.class);
 
 			
-			monBeanSpring.monServiceBean().testMethod();
+			//monBeanSpring.monServiceBean().testMethod();
 			monBeanService.testMethod();
 			//monBeanSpring.getMonService().testMethod();
 		}	
