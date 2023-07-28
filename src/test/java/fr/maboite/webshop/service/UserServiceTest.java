@@ -19,7 +19,6 @@ public class UserServiceTest {
 	public void test_userService_exists()
 	{
 		Assertions.assertNotNull(userService);
-		userService.hello();
 	}
 	
 	@Test

@@ -14,7 +14,7 @@ public class StartApp {
 		// Start Spring context
 		try (AnnotationConfigApplicationContext appContext 
 				= new AnnotationConfigApplicationContext(UserService.class,UserRoleService.class)) {
-			System.out.println("Contexte Spring started");
+			System.out.println("Spring context started");
 
 			// Récupération du bean instancié par Spring 
 			UserService userServiceBean = appContext.getBean(UserService.class);
