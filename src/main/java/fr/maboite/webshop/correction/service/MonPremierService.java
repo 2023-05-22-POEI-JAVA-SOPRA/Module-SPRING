@@ -1,9 +1,11 @@
-package fr.maboite.webshop.service;
+package fr.maboite.webshop.correction.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
+
+//@Scope("prototype")
 public class MonPremierService {
 
 	@Autowired
