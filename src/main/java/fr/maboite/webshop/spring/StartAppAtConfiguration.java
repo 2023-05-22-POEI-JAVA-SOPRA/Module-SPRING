@@ -4,6 +4,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
+import fr.maboite.webshop.service.MonPremierService;
 import fr.maboite.webshop.service.MyService;
 import fr.maboite.webshop.service.UserService;
 import fr.maboite.webshop.spring.simple.configuration.SpringSimpleConfiguration;
@@ -43,11 +44,14 @@ public class StartAppAtConfiguration {
 				userService1.setMinAge(100);
 				System.out.println("userService1 after reset user 1 ! minAge :" + userService1.getMinAge());
 				System.out.println("userService2 after reset user 1 ! minAge :" + userService2.getMinAge());
-				
+				MonPremierService monPremierService1 = new MonPremierService();
+				MonPremierService monPremierService2 = new MonPremierService();
+ 
 				//Avec Scope "singleton" ou sans scope -->True
 				//Avec Scope "protoype" -> false
-				System.out.println("Same instance in context ? : " + (userService1==userService2 ));
-
+				System.out.println("Same userService instance  in context ? : " + (userService1==userService2 ));
+				System.out.println("Same monPremierService instance  in context ? : " + (monPremierService1==monPremierService2 ));
+				
 				
 				
 				
