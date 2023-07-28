@@ -29,7 +29,7 @@ public class ExampleServiceTest {
 	
 	@Test
 	public void test_monGetAttribut_saloute() {
-		assertNotNull(monService.getMonMessage().equals("Salut !"));
+		assertEquals("Salut !",monService.getMonMessage());
 	}
 	
 
