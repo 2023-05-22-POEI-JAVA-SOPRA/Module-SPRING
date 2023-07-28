@@ -2,9 +2,6 @@ package fr.maboite.webshop.spring;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import fr.maboite.webshop.service.MonDeuxiemeDao;
-import fr.maboite.webshop.service.MonDeuxiemeService;
-import fr.maboite.webshop.service.MonPremierDao;
 import fr.maboite.webshop.service.MonPremierService;
 import fr.maboite.webshop.spring.real.configuration.ConfigurationJP;
 
