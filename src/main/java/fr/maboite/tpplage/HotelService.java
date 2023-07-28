@@ -22,8 +22,12 @@ public class HotelService {
 	}
 
 	public boolean isFull(String hotelName) {
-		Pattern pattern = Pattern.compile("^super", Pattern.CASE_INSENSITIVE);
+		if (hotelName == null) {
+			return false;
+		}
+		Pattern pattern = Pattern.compile("^super.*", Pattern.CASE_INSENSITIVE);
 		Matcher matcher = pattern.matcher(hotelName);
 		return matcher.matches();
 	}
+
 }

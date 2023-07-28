@@ -25,9 +25,10 @@ public class PlageService {
 		if (plageName == null) {
 			return true;
 		} else {
-			Pattern pattern = Pattern.compile("plage$", Pattern.CASE_INSENSITIVE);
+			Pattern pattern = Pattern.compile(".*plage$", Pattern.CASE_INSENSITIVE);
 			Matcher matcher = pattern.matcher(plageName);
 			return matcher.matches();
 		}
 	}
+	
 }

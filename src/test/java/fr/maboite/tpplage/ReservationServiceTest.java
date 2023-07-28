@@ -35,58 +35,59 @@ public class ReservationServiceTest {
 	}
 	
 	//DemandeReservation
+	@Test
 	void demande_reservation_valid() {
 		LocalDate debut = LocalDate.of(2015, 1, 1);
 		LocalDate fin = LocalDate.of(2020, 10, 10);
-		DemandeReservation dm = new DemandeReservation("test", debut, fin, "hotel", "plageOk");
+		DemandeReservation dm = new DemandeReservation("test", debut, fin, "okplage", "hotel");
 		Reservation result = new Reservation(50, "test", debut, fin);
 		assertEquals(service.validDemand(dm), result);
 	}
-	
+	@Test
 	void demande_reservation_hotel_null() {
 		LocalDate debut = LocalDate.of(2015, 1, 1);
 		LocalDate fin = LocalDate.of(2020, 10, 10);
-		DemandeReservation dm = new DemandeReservation("test", debut, fin, null, "plageOk");
+		DemandeReservation dm = new DemandeReservation("test", debut, fin, "okplage", null);
 		Reservation result = new Reservation(50, "test", debut, fin);
 		assertEquals(service.validDemand(dm), result);
 	}
-	
+	@Test
 	void demande_reservation_plage_null() {
 		LocalDate debut = LocalDate.of(2015, 1, 1);
 		LocalDate fin = LocalDate.of(2020, 10, 10);
-		DemandeReservation dm = new DemandeReservation("test", debut, fin, "hotel", null);
+		DemandeReservation dm = new DemandeReservation("test", debut, fin, null, "hotel");
 		Reservation result = new Reservation(50, "test", debut, fin);
 		assertEquals(service.validDemand(dm), result);
 	}
-	
+	@Test
 	void demande_reservation_plage_name_with_uppercase() {
 		LocalDate debut = LocalDate.of(2015, 1, 1);
 		LocalDate fin = LocalDate.of(2020, 10, 10);
-		DemandeReservation dm = new DemandeReservation("test", debut, fin, "hotel", "PLaGeOk");
+		DemandeReservation dm = new DemandeReservation("test", debut, fin, "OkPLaGe", "hotel");
 		Reservation result = new Reservation(50, "test", debut, fin);
 		assertEquals(service.validDemand(dm), result);
 	}
-	
+	@Test
 	void demande_reservation_invalid_hotel_name_with_uppercase() {
 		LocalDate debut = LocalDate.of(2015, 1, 1);
 		LocalDate fin = LocalDate.of(2020, 10, 10);
-		DemandeReservation dm = new DemandeReservation("test", debut, fin, "SuPeRHotel", "plageOk");
+		DemandeReservation dm = new DemandeReservation("test", debut, fin, "okplage" , "SuPeRHotel");
 		Reservation result = null;
 		assertEquals(service.validDemand(dm), result);
 	}
-	
+	@Test
 	void demande_reservation_plage_invalid() {
 		LocalDate debut = LocalDate.of(2015, 1, 1);
 		LocalDate fin = LocalDate.of(2020, 10, 10);
-		DemandeReservation dm = new DemandeReservation("test", debut, fin, "hotel", "nplage");
+		DemandeReservation dm = new DemandeReservation("test", debut, fin, "plagett", "hotel");
 		Reservation result = null;
 		assertEquals(service.validDemand(dm), result);
 	}
-	
+	@Test
 	void demande_reservation_hotel_invalid() {
 		LocalDate debut = LocalDate.of(2015, 1, 1);
 		LocalDate fin = LocalDate.of(2020, 10, 10);
-		DemandeReservation dm = new DemandeReservation("test", debut, fin, "superHotel", "plageOk");
+		DemandeReservation dm = new DemandeReservation("test", debut, fin, "okplage", "superHotel");
 		Reservation result = null;
 		assertEquals(service.validDemand(dm), result);
 	}
