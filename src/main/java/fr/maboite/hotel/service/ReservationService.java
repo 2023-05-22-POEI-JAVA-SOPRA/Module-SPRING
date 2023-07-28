@@ -3,6 +3,7 @@ package fr.maboite.hotel.service;
 import org.springframework.stereotype.Service;
 
 import fr.maboite.hotel.dao.ReservationDao;
+import fr.maboite.hotel.entity.DemandeReservation;
 import fr.maboite.hotel.entity.Reservation;
 
 @Service
@@ -24,7 +25,18 @@ public class ReservationService {
 		System.out.println("Reservation Service");
 		this.rDao = rDao;
 	}
-	
-	
 
+	public Reservation saveDemande(DemandeReservation dRes) {
+		Reservation resToSave = new Reservation();
+		if (dRes.getHotel().startsWith("super")) {
+			return null;
+		} else if (dRes.getPlage().endsWith("plage") == false || dRes.getPlage() == null) {
+			return null;
+		} else {
+			resToSave.setNom(dRes.getNom());
+			resToSave.setDebut(dRes.getDebut());
+			resToSave.setFin(dRes.getFin());
+			return resToSave;
+		}
+	}
 }
