@@ -31,7 +31,11 @@ public class PremierService {
 
 	public void call() {
 		System.out.println("Premier service "+this.getId());
-	}		
+	}	
+	
+	public Integer multiply(Integer n1, Integer n2) {
+		return n1*n2;
+	}
 		
 	public SecondService getSecondService() {
 		return secondService;
