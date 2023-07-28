@@ -32,7 +32,19 @@ public class ReservationServices {
 
 	
 //	Methode demandée dernière partie TP. On renvoi une ResaPojo ???
-	public ReservationPojo bookReservation(DemandeReservation demandeReservation) {
-		return new ReservationPojo();
+// il doit y avoir un souci car dans l'énoncé "Tout code fonctionnel doit être dans un service 
+//	correspondant à la classe correspondante." //et je n'ai rien fait ailleurs
+	public ReservationPojo bookReservation(DemandeReservation book) {
+		ReservationPojo newResa = new ReservationPojo();
+		
+		if (book.getHotel().startsWith("super") || book.getPlage() == null || !book.getPlage().endsWith("plage")) {
+			return null;
+		} else {
+			newResa.setName(book.getName());
+			newResa.setBegin(book.getBegin());
+			newResa.setEnd(book.getEnd());
+		}
+
+		return newResa;
 	}
 }
