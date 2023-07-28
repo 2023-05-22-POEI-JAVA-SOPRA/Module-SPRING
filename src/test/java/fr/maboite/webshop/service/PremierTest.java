@@ -18,7 +18,7 @@ public class PremierTest {
 	@Test
 	public void testCall() {
 		assertNotNull(premierService);
-		premierService.call();
+		assertEquals("Premier service 1",premierService.call());;
 	}
 	
 	@Test

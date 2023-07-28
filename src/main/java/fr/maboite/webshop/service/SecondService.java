@@ -23,8 +23,8 @@ public class SecondService {
 		this.id = id;
 	}
 
-	public void call() {
-		System.out.println("Second service "+this.getId());
+	public String call() {
+		return "Second service "+this.getId();
 	}
 	
 }

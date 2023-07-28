@@ -29,8 +29,8 @@ public class PremierService {
 		this.id = id;
 	}
 
-	public void call() {
-		System.out.println("Premier service "+this.getId());
+	public String call() {
+		return "Premier service "+this.getId();
 	}	
 	
 	public Integer multiply(Integer n1, Integer n2) {
