@@ -40,7 +40,7 @@ public class ReservationServiceTest {
 	{
 		Reservation reservationSaved = reservationService.get(id);
 		Assertions.assertNotNull(reservationSaved);
-		//Assertions.assertTrue(reservationSaved.getId() > 0);
+
 		
 	}
 	

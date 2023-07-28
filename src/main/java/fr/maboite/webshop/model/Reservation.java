@@ -55,7 +55,7 @@ public class Reservation {
 
 	public Reservation() {
 		super();
-		// TODO Auto-generated constructor stub
+
 	}
 
 	@Override
