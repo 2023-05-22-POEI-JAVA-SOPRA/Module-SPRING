@@ -1,4 +1,5 @@
-package fr.maboite.webshop.model;
+package fr.maboite.hotel.entity;
+
 
 public class Hotel {
 

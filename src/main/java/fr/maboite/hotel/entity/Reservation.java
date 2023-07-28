@@ -1,4 +1,4 @@
-package fr.maboite.webshop.model;
+package fr.maboite.hotel.entity;
 
 import java.time.LocalDate;
 
