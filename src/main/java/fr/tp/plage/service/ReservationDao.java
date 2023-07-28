@@ -30,7 +30,7 @@ public class ReservationDao {
 	}
 	
 	public Reservation getDemandeRes(DemandeReservation demandeReservation) {
-		
+		System.out.println("check de la demande de reservation");
 		Reservation res = new Reservation();
 		String plage = demandeReservation.getPlage();
 		String complet = demandeReservation.getHotel().substring(0, 4);

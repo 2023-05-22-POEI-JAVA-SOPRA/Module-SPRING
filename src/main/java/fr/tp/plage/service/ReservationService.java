@@ -3,6 +3,7 @@ package fr.tp.plage.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import fr.tp.plage.entity.DemandeReservation;
 import fr.tp.plage.entity.Reservation;
 
 @Component
@@ -17,6 +18,10 @@ public class ReservationService {
 	
 	public Reservation get(Integer id) {
 		return this.reservationDao.get(id);
+	}
+	
+	public Reservation getDemandeRes(DemandeReservation demandeReservation) {
+		return this.reservationDao.getDemandeRes(demandeReservation);
 	}
 
 }
