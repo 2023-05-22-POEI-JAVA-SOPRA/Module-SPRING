@@ -5,8 +5,10 @@ import java.time.LocalDate;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import fr.maboite.plage.service.HotelServices;
+import fr.maboite.plage.service.PlageServices;
 import fr.maboite.plage.service.ReservationServices;
 import fr.maboite.webshop.model.HotelPojo;
+import fr.maboite.webshop.model.PlagePojo;
 import fr.maboite.webshop.model.ReservationPojo;
 import fr.maboite.webshop.spring.simple.configuration.PlageSpringConfig;
 
@@ -36,7 +38,19 @@ public class PlageContextSpringMain {
             resa.setBegin(LocalDate.of(2023, 8, 2));
             resa.setEnd(LocalDate.of(2023, 8, 15));
             
-			System.out.println(myResa.save(resa));
+			myResa.save(resa);
+		
+// Pour Plage
+			PlageServices myPlage = appContext.getBean(PlageServices.class);
+			
+			// Création de l'objet sans Spring pour les entités
+            PlagePojo plage = new PlagePojo();
+            plage.setId(1);
+            plage.setName("Navy Pier");
+            
+            
+            myPlage.save(plage);
+            myPlage.get(1);
 		}
 	}
 }
