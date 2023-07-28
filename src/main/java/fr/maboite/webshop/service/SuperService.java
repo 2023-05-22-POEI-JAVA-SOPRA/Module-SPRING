@@ -27,4 +27,8 @@ public class SuperService {
 	public String getName() {
 		return name;
 	}
+	
+	public boolean returnTrue() {
+		return true;
+	}
 }

@@ -2,6 +2,7 @@ package fr.maboite.webshop.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,10 +21,12 @@ public class ExampleServiceTest {
 		assertNotNull(serviceTest);
 	}
 	
-	
+	@Test
 	public void check_name() {
-		assertEquals(serviceTest.getName(), "${ma.propriete.1}");
 		assertEquals(serviceTest.getName(), "numero1");
-
+	}
+	@Test
+	public void check_method_returnTrue() {
+		assertTrue(serviceTest.returnTrue());
 	}
 }
