@@ -21,8 +21,8 @@ public class SpringLaurentApplicationExo2 {
 
 			// Opérations sur les objets ...
 			monPremierBeanSpring.monServiceTest().printServiceLpTest();
-
-
+			SpringSimpleConfLP maConf= appContext.getBean(SpringSimpleConfLP.class);
+			System.out.println(maConf.getMaVariable());
 
 		}
 
