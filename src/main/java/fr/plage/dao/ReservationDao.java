@@ -18,15 +18,18 @@ public class ReservationDao {
 		Reservation savedRes = new Reservation();
 
 		if (demRes.getHotel().toLowerCase().startsWith("super")) {
+			System.out.println("Échec : Hotel plein");
 			return null;
 		}
 		else if (!(demRes.getPlage().toLowerCase().endsWith("plage"))) {
+			System.out.println("Échec : Plage introuvable");
 			return null;
 		}
 		else {
 			savedRes.setNom(demRes.getNom());
 			savedRes.setDebut(demRes.getDebut());
 			savedRes.setFin(demRes.getFin());
+			System.out.println("Réservation créée.");
 			return savedRes;
 		}
 	}

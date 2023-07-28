@@ -64,6 +64,12 @@ public class DemandeReservation {
 		this.plage = plage;
 		this.hotel = hotel;
 	}
+	
+	public DemandeReservation(String nom,String plage, String hotel) {
+		this.nom = nom;
+		this.plage = plage;
+		this.hotel = hotel;
+	}
 
 	public DemandeReservation() {
 	}
