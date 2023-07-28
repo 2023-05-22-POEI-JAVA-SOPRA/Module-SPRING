@@ -15,22 +15,23 @@ public class SpringSimpleApplication {
 		try (AnnotationConfigApplicationContext appContext = new AnnotationConfigApplicationContext(
 				MaConfigurationFacile.class)) {
 			// et scanne le package "fr.maboite.webshop.correction"
-							System.out.println("Contexte Spring démarré");
+			System.out.println("Contexte Spring démarré");
 
-				// Récupération du bean instancié par Spring (et potentiellement rattaché à
-				// d'autres beans Spring)
-				// MaConfigurationFacile monPremierBeanSpring =
-				// appContext.getBean(MaConfigurationFacile.class);
-				MonPremierService monPremierService = appContext.getBean(MonPremierService.class);
-				MonSecondService monSecondService = appContext.getBean(MonSecondService.class);
-				Example monExample = appContext.getBean(Example.class);
+			// Récupération du bean instancié par Spring (et potentiellement rattaché à
+			// d'autres beans Spring)
+			// MaConfigurationFacile monPremierBeanSpring =
+			// appContext.getBean(MaConfigurationFacile.class);
+			MonPremierService monPremierService = appContext.getBean(MonPremierService.class);
+			MonSecondService monSecondService = appContext.getBean(MonSecondService.class);
+			Example monExample = appContext.getBean(Example.class);
+			MonPremierService maPropConfig = appContext.getBean(MonPremierService.class);
 
-				// Opérations sur les objets ...
-				monExample.giveExample();
-				monPremierService.coucou();
-				monSecondService.coucouDeux();
+			// Opérations sur les objets ...
+			monExample.giveExample();
+			monPremierService.coucou();
+			monSecondService.coucouDeux();
+			maPropConfig.afficherProp();
 
-			
 		}
 	}
 }

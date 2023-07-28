@@ -1,12 +1,25 @@
 package fr.maboite.webshop.correction.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 @Service
-
-//@Scope("prototype")
+@Scope("prototype")
 public class MonPremierService {
+	
+	public static Integer NOMBRE_INSTANCES = 0;
+	
+	@Value("${prop.nom}")
+	private String propNom;
+
+	@Value("${prop.description}")
+	private String propDescription;
+
+	public void afficherProp() {
+		System.out.println("Nom : " + propNom + ", Description : " + propDescription);
+	}
 
 	@Autowired
 	private MonPremierDao monPremierDao;
@@ -19,7 +32,8 @@ public class MonPremierService {
 	}
 
 	public MonPremierService() {
-		System.out.println("Je vis! 1s");
+		NOMBRE_INSTANCES ++;
+		System.out.println("Je vis! 1s. Instances numéro : " + NOMBRE_INSTANCES);
 	}
 
 	public MonPremierDao getMonPremierDao() {
