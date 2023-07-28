@@ -7,9 +7,9 @@ import fr.maboite.webshop.model.HotelPojo;
 @Component
 public class HotelDao {
 	
-	public HotelPojo get(HotelPojo Hotel) {
+	public HotelPojo get(Integer id) {
 		System.out.println("méthode get HotelPojo");
-		return Hotel;
+		return new HotelPojo();
 	}
 	
 	public HotelPojo save(HotelPojo Hotel) {

@@ -15,4 +15,8 @@ public class HotelServices {
 	public HotelPojo save(HotelPojo hotel) {
 		return this.hotelDao.save(hotel);
 	}
+	
+	public HotelPojo get(Integer id) {
+		return this.hotelDao.get(id);
+	}
 }

@@ -15,4 +15,9 @@ public class ReservationServices {
 	public ReservationPojo save(ReservationPojo resa) {
 		return this.reservationDao.save(resa);
 	}
+	
+	public ReservationPojo get(Integer id) {
+		return this.reservationDao.get(id);
+	}
+
 }

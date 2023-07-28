@@ -6,9 +6,9 @@ import fr.maboite.webshop.model.ReservationPojo;
 
 @Component
 public class ReservationDao {
-	public ReservationPojo get(ReservationPojo resa) {
+	public ReservationPojo get(Integer id) {
 		System.out.println("méthode get Reservation");
-		return resa;
+		return new ReservationPojo();
 	}
 	
 	public ReservationPojo save(ReservationPojo resa) {
