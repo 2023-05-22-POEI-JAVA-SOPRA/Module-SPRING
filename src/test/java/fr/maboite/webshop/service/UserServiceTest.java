@@ -16,7 +16,7 @@ public class UserServiceTest {
 	private UserService userService;
 	
 	@Test
-	public void test()
+	public void test_userService_exists()
 	{
 		Assertions.assertNotNull(userService);
 		userService.hello();
@@ -30,10 +30,11 @@ public class UserServiceTest {
 	
 	@ParameterizedTest()
 	@CsvSource(value = { "1", "100", "800" }, delimiter = ',')
-	public void test_userService_check_min_age_after_set(Integer id)
+	public void test_userService_check_min_age_after_set(Integer age)
 	{
-		userService.setMinAge(id);
-		Assertions.assertTrue(userService.getMinAge() == id);
+		System.out.println("age : " + age);
+		userService.setMinAge(age);
+		Assertions.assertTrue(userService.getMinAge() == age,"L'age minimum de l'instance est différent de " + age);
 	}
 
 }
