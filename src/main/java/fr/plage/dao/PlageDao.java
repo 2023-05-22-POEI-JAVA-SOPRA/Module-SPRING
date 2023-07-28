@@ -12,11 +12,11 @@ public class PlageDao {
 		return savedRes;
 	}
 
-	public void getById(Integer id) {
-		System.out.println("Plage numéro : " + id + " a été trouvée.");
+	public String getById(Integer id) {
+		return"Plage numéro : " + id + " a été trouvée.";
 	}
 
-	public void delById(Integer id) {
-		System.out.println("Plage numéro : " + id + " a été supprimée.");
+	public String delById(Integer id) {
+		return "Plage numéro : " + id + " a été supprimée.";
 	}
 }

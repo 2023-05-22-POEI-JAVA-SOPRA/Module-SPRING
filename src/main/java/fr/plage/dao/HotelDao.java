@@ -12,11 +12,11 @@ public class HotelDao {
 		return savedRes;
 	}
 
-	public void getById(Integer id) {
-		System.out.println("Hotel numéro : " + id + " a été trouvée.");
+	public String getById(Integer id) {
+		return "Hotel numéro : " + id + " a été trouvée.";
 	}
 
-	public void delById(Integer id) {
-		System.out.println("Hotel numéro : " + id + " a été supprimée.");
+	public String delById(Integer id) {
+		return "Hotel numéro : " + id + " a été supprimée.";
 	}
 }
