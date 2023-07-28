@@ -24,8 +24,22 @@ public class SpringSecondAppConfigAc {
 			
 			myFirstBeanSpring.coucou();
 			myFirstBeanSpring.getMonSecondService().coucou();
+			System.out.println(beanSpring.getVariableConfiguree());	
+			
 			
 			mySecondBeanSpring.hello();
+			
+			
+			myFirstBeanSpring.setName("new name");
+			
+			FirstServiceAc monPremierServiceVariable2 = appContext.getBean(FirstServiceAc.class);
+			System.out.println("Le nom de monPremierServiceVariable2 vaut : " + monPremierServiceVariable2.getName());
+
+			System.out.println(
+					"Est-ce qu'il n'y a qu'une seule instance de la classe "
+							+ " FirstServiceAc dans le contexte Sprint ? "
+							+ (myFirstBeanSpring == monPremierServiceVariable2));
+
 				
 		}
 	}
