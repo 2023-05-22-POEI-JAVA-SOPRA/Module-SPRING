@@ -9,6 +9,11 @@ public class Plage {
 
 	private String nom;
 
+	public Plage(Plage plage) {
+		this.idPlage = plage.idPlage;
+		this.nom = plage.nom;
+	}
+
 	public Integer getIdPlage() {
 		return idPlage;
 	}

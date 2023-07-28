@@ -11,6 +11,12 @@ public class Hotel {
 
 	private String ville;
 
+	public Hotel(Hotel hotel) {
+		this.idHotel = hotel.idHotel;
+		this.nom = hotel.nom;
+		this.ville = hotel.ville;
+	}
+
 	public Integer getIdHotel() {
 		return idHotel;
 	}

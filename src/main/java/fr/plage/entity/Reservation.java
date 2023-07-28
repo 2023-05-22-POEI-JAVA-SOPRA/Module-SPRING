@@ -41,8 +41,8 @@ public class Reservation {
 	public void setDebut(Integer annee, Integer mois, Integer jour) {
 		this.debut = LocalDate.of(annee, mois, jour);
 	}
-	//.plusDays(int) rajoute un nombre de jour à la date
-	
+	// .plusDays(int) rajoute un nombre de jour à la date
+
 	public LocalDate getFin() {
 		return fin;
 	}
@@ -50,9 +50,16 @@ public class Reservation {
 	public void setFin(LocalDate fin) {
 		this.fin = fin;
 	}
-	
+
 	public void setFin(Integer annee, Integer mois, Integer jour) {
 		this.fin = LocalDate.of(annee, mois, jour);
+	}
+
+	public Reservation(Reservation reservation) {
+		this.idReservation = reservation.idReservation;
+		this.nom = reservation.nom;
+		this.debut = reservation.debut;
+		this.fin = reservation.fin;
 	}
 
 }
