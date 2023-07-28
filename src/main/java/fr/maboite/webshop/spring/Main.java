@@ -2,8 +2,7 @@ package fr.maboite.webshop.spring;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import fr.maboite.webshop.service.Mon2Service;
-import fr.maboite.webshop.service.MonService;
+import fr.maboite.webshop.correction.service.MonService;
 import fr.maboite.webshop.spring.real.configuration.SpringSimpleConfiguration;
 
 public class Main {
