@@ -14,9 +14,14 @@ public class PremierServiceMain {
 			System.out.println("Demarrage contexte spring");
 			
 			PremiereConfiguration premierBeanConfig = appContext.getBean(PremiereConfiguration.class);
-			
 			premierBeanConfig.createPremierService().call();
 			premierBeanConfig.createSecondService().call();
+			
+			PremiereConfiguration secondBeamConfig = appContext.getBean(PremiereConfiguration.class);	
+			secondBeamConfig.createPremierService().call();
+			
+			System.out.println(premierBeanConfig==secondBeamConfig);
+
 		}
 	}
 	

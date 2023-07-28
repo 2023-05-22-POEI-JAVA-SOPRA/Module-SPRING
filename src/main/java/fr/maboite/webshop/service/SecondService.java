@@ -2,7 +2,7 @@ package fr.maboite.webshop.service;
 
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class SecondService {
 	
 	Integer id;
