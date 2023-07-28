@@ -1,3 +1,3 @@
 # Module-SPRING
 
-Point d'entrée de l'app ==> StartSimpleConfigurationTPHotelReservationPlage
+Point d'entrée de l'app ==> StartSimpleConfigurationTPHotelReservationPlage   
