@@ -17,4 +17,17 @@ public class ReservationService {
 		System.out.println("in ReservationService : get");
 		return reservationDao.get(id);
 	}
+	
+	public Reservation validDemand(DemandeReservation demandeReservation) {
+		HotelService hs = new HotelService();
+		PlageService ps = new PlageService();
+		if (!hs.isFull(demandeReservation.getHotel()) &&
+				ps.isOk(demandeReservation.getPlage())) {
+			return new Reservation(50,
+					demandeReservation.getNom(),
+					demandeReservation.getDebut(),
+					demandeReservation.getFin());
+		}
+		return null;
+	}
 }
