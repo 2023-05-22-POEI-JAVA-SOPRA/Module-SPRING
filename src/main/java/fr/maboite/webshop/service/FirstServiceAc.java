@@ -14,6 +14,9 @@ public class FirstServiceAc {
 	
 	private String name = "défaut";
 	
+	public int sum(int a, int b) {
+		return a + b;
+	}
 	@Autowired
 	private SecondServiceAc monSecondService;
 	
