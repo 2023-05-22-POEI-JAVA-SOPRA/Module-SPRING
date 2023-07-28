@@ -3,7 +3,8 @@ package fr.maboite.webshop.service;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-@Service //@Component@
+//@Service
+@Component
 public class UserRoleService {
 	
 	public void hello() {

@@ -1,7 +1,11 @@
 package fr.maboite.webshop.spring.simple.configuration;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+
+import fr.maboite.webshop.service.MyService;
+import fr.maboite.webshop.service.UserService;
 
 //Déclare un bean de configuration
 //ce bean va créer d'autres instances
@@ -9,7 +13,19 @@ import org.springframework.context.annotation.Configuration;
 
 //Scanne les composants trouvés dans le
 //package fourni en paramètre
-@ComponentScan("mettre-ici-un-nom-de-package-a-scanner")
+@ComponentScan("fr.maboite.webshop.service")
 public class SpringSimpleConfiguration {
+
+//	@Bean
+//	public MyService createService() {
+//		return new MyService();
+//	}
+
+//	@Bean 
+//	public UserService createUserService()
+//	{
+//		return new UserService();
+//	}
+	
 
 }

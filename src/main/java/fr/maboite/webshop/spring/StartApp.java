@@ -21,6 +21,8 @@ public class StartApp {
 			userServiceBean.hello();
 			userServiceBean.getUserRoleService().hello();	
 			
+			
+			
 					
 		}
 		
