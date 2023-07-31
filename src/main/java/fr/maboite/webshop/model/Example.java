@@ -44,5 +44,7 @@ public class Example  {
 		this.taille = taille;
 	}
 
-
+	public Example() {
+		super();
+	}
 }
