@@ -14,7 +14,8 @@ public class PlageDao {
 	
 	public PlagePojo save(PlagePojo plage) {
 		System.out.println("je dois sauvegarder une nouvelle Plage");
-		
+		plage.setId(2);
+		plage.setName("blabla");
 		return plage;
 	}
 
