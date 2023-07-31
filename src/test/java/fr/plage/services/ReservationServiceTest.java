@@ -49,4 +49,8 @@ public class ReservationServiceTest {
 		DemandeReservation dr = new DemandeReservation("Boubou","Saucisson plage","Hotel saucisson");
 		assertNotNull(resSer.createFromDemande(dr));
 	}
+	
+	//ARRANGE on met donne des valeurs à save
+	//ACT on créé l'objet 
+	//ASSERT on vérifie si les attributs correspondent bien 
 }
