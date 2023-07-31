@@ -16,7 +16,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 //Active les Repositories JPA trouvés
 //dans le package fourni en paramètre
-@EnableJpaRepositories("fr.maboite.webshop.dao.spring")
+@EnableJpaRepositories("fr.maboite.webshop.spring")
 
 //Scanne les composants trouvés dans le
 //package fourni en paramètre

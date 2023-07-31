@@ -30,6 +30,9 @@ public class SpringHotelApplication {
 			// prtotype
 			ServicePlage Plage1 = appContext.getBean(ServicePlage.class);
 			System.out.println("le nom de Plage1 est :" + Plage1.getId());
+			//
+			ServiceReservation Reservation1 = appContext.getBean(ServiceReservation.class);
+			System.out.println("le nom de Reservation est :" +Reservation1.getId());
 		}
 
 	}

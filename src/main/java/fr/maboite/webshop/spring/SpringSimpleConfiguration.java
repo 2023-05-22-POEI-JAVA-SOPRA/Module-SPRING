@@ -5,8 +5,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
-import fr.maboite.webshop.service.MonPremierDao;
-import fr.maboite.webshop.service.MonPremierService;
+
 import fr.maboite.webshop.service.MyFirstService;
 import fr.maboite.webshop.service.MySecondService;
 
