@@ -20,6 +20,10 @@ public class ExampleService {
 		return this.exampleRepo.findById(id).get();
 	}
 	
+	public Iterable<Example> getAll() {
+		return this.exampleRepo.findAll();
+	}
+	
 	public void deleteById(Long id) {
 		this.exampleRepo.deleteById(id);
 	}
