@@ -1,5 +1,7 @@
 package fr.exercice.application;
 
+import java.util.List;
+
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import fr.exercice.service.ExampleService;
@@ -21,13 +23,22 @@ public class ExampleApplication {
 			ExampleService exampleService = appContext.getBean(ExampleService.class);
 
 			// Opérations sur les objets ...
-			Example example = new Example();
-			exampleService.save(example);
+//			Example example = new Example();
+//			exampleService.save(example);
+//			exampleService.deleteById(2l);
+//			exampleService.deleteById(3l);
+//			exampleService.deleteById(14l);
+//			exampleService.deleteById(15l);
+			
+			List<Example> listExNom = exampleService.getByNomOrId("Objet 1", 8l);
+			for (Example example : listExNom) {
+				System.out.println(example.getId());
+			}
+			
 			Iterable<Example> listExamples = exampleService.getAll();
 			for (Example example2 : listExamples) {
-				System.out.println(example2.getId());
+				System.out.println("Id : " + example2.getId()+", Nom : "+ example2.getNom());
 			}
-			exampleService.deleteById(1l);
 		}
 	}
 }

@@ -1,5 +1,7 @@
 package fr.exercice.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,19 +13,35 @@ public class ExampleService {
 
 	@Autowired
 	private ExampleRepository exampleRepo;
-	
+
 	public Example save(Example example) {
 		return this.exampleRepo.save(example);
 	}
-	
+
 	public Example getById(Long id) {
 		return this.exampleRepo.findById(id).get();
 	}
-	
+
+	public List<Example> getByNom(String nom) {
+		return this.exampleRepo.findByNom(nom);
+	}
+
+	public List<Example> getByNomOrId(String nom, Long id) {
+		return this.exampleRepo.findByNomOrId(nom, id);
+	}
+
+	public List<Example> getByNomIgnoreCase(String nom) {
+		return this.exampleRepo.findByNomIgnoreCase(nom);
+	}
+
+	public List<Example> getByNomContaining(String nom) {
+		return this.exampleRepo.findByNomIgnoreCaseContaining(nom);
+	}
+
 	public Iterable<Example> getAll() {
 		return this.exampleRepo.findAll();
 	}
-	
+
 	public void deleteById(Long id) {
 		this.exampleRepo.deleteById(id);
 	}
