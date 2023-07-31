@@ -29,4 +29,27 @@ public class ExampleService {
 	public void deleteById(Long id) {
 		this.exampleDao.deleteById(id);
 	}
+	
+	public List<Example> getByNom(String nom) {
+		return this.exampleDao.findByNom(nom);
+	}
+	public List<Example> getByNomIgnoreCase(String nom) {
+		return this.exampleDao.findByNomIgnoreCase(nom);
+	}
+	public List<Example> getByPartName(String partName){
+		return this.exampleDao.findByNomContainingIgnoreCase(partName);
+	}
+	
+	public List<Example> getByNameAndTaille(String nom, Float taille){
+		return this.exampleDao.findByNomAndTaille(nom,taille);
+	}
+	
+	public List<Example> getByNameOrTaille(String nom, Float taille){
+		return this.exampleDao.findByNomOrTailleGreaterThanEqual(nom,taille);
+	}
+//	public List<Example> getByForchetta(String nom,Float borne1, Float borne2){
+//		return this.exampleDao.findByNomOrTailleWithin(nom, borne1,  borne2);
+//	}
+	
+	
 	}

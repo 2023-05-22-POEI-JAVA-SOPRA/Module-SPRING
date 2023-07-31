@@ -44,5 +44,11 @@ public class Example  {
 		this.taille = taille;
 	}
 
+	@Override
+	public String toString() {
+		return "Example [id=" + id + ", nom=" + nom + ", taille=" + taille + "]";
+	}
+	
+
 
 }
