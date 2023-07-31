@@ -25,8 +25,26 @@ public class EmployeeService {
 	{
 		return employeeRepository.findAll();
 	}
-	public Employee get(Long id)
+	public Employee getById(Long id)
 	{
 		return employeeRepository.findById(id).get();
 	}
+	
+	public void delete(Long id)
+	{
+		 employeeRepository.deleteById(id);
+	}
+	public void deleteAll()
+	{
+		 employeeRepository.deleteAll();
+	}
+	public void printAll()
+	{
+		for(Employee employee : getAll())
+		{
+			System.out.println(employee);
+		}
+	}
+	
+	
 }

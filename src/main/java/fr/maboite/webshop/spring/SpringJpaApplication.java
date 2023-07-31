@@ -36,13 +36,29 @@ public class SpringJpaApplication {
 			employeeServiceBean.save(emp2);
 			employeeServiceBean.save(emp3);
 			
+			
 			Iterable<Employee> allEmployees = employeeServiceBean.getAll();
 			for(Employee emp : allEmployees)
 			{
 				System.out.println("I got an employee : " + emp);
 			}
+			employeeServiceBean.delete(emp3.getId());
 			
-				
+			allEmployees = employeeServiceBean.getAll();
+			for(Employee emp : allEmployees)
+			{
+				System.out.println("I got an employee : " + emp);
+			}
+			
+			//employeeServiceBean.deleteAll();
+//			Employee emp1 = new Employee("Max", "IT", 25000.0);
+//			Employee emp2 = new Employee("Tic", "HR", 500.0);
+//			Employee emp3 = new Employee("Tac", "Marketing", 1000.0);
+			employeeServiceBean.save(emp1);
+			employeeServiceBean.save(emp2);
+			employeeServiceBean.save(emp3);
+			employeeServiceBean.printAll();
+			
 		}
 	}
 

@@ -33,9 +33,15 @@ public class ExamplesService {
 	}
 	
 	
-	public Example get(Long id)
+	public Example getById(Long id)
 	{
 		return firstRepositorySpingData.findById(id).get();
 	}
+	
+//	public List<Example> getByNom(String nom)
+//	{
+//		
+//		"select * from exmaple where nom = :nom"
+//	}
 	
 }
