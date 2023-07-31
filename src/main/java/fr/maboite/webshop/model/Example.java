@@ -44,5 +44,16 @@ public class Example  {
 		this.taille = taille;
 	}
 
+	public Example(String nom, Float taille) {
+		super();
+		this.nom = nom;
+		this.taille = taille;
+	}
+
+	public Example() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 
 }

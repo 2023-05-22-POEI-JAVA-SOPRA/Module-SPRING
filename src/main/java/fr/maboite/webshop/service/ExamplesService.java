@@ -1,5 +1,7 @@
 package fr.maboite.webshop.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -38,10 +40,10 @@ public class ExamplesService {
 		return firstRepositorySpingData.findById(id).get();
 	}
 	
-//	public List<Example> getByNom(String nom)
-//	{
-//		
-//		"select * from exmaple where nom = :nom"
-//	}
+	public List<Example> getByNom(String nom)
+	{
+		return firstRepositorySpingData.findByNom(nom);
+		//"select * from exmaple where nom = :nom"
+	}
 	
 }
