@@ -66,7 +66,7 @@ public class TPTest {
 	@Test
 	public void testHotelServiceGet() {
 		Hotel hotel = new Hotel(5,"Grand Hotel","Nice");
-		Hotel result = hotelService.get(5);
+		Hotel result = hotelService.getById(5l);
 		assertNotNull(result);
 		assertEquals(result.toString(), hotel.toString());
 	}

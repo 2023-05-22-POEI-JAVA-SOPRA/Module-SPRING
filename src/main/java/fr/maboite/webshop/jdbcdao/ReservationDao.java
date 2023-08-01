@@ -6,10 +6,13 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
+import fr.maboite.webshop.model.Hotel;
 import fr.maboite.webshop.model.Reservation;
 
 //@Component
@@ -23,6 +26,21 @@ public interface ReservationDao extends CrudRepository<Reservation, Long>{
 	List<Reservation> findByNomAndDebut(String nom, LocalDate debut);
 	List<Reservation> findDistinctReservationByNomOrDebut(String nom, LocalDate debut);
 	List<Reservation> findByNomIgnoreCaseContaining(String partNom);
+
+	
+	@Query("from Reservation where nom = :nom")
+	List<Reservation> queryFindByNom(@Param("nom") String nom);
+	
+	@Query("from Reservation where nom = :nom or debut = :debut")
+	List<Reservation> queryFindByNomOrDebut(@Param("nom") String nom, @Param("debut") LocalDate debut);
+	
+	@Query("from Reservation where nom = :nom and debut = :debut")
+	List<Reservation> queryFindByNomAndDebut(@Param("nom") String nom, @Param("debut") LocalDate debut);
+	
+	@Query("from Reservation order by nom")
+	List<Reservation> queryFindByNomAsc();
+	
+	List<Reservation> findByHotelVille(String ville);
 
 	
 	}

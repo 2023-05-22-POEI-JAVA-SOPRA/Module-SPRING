@@ -6,11 +6,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import fr.maboite.webshop.jdbcdao.ReservationDao;
 import fr.maboite.webshop.model.DemandeReservation;
+import fr.maboite.webshop.model.Hotel;
 import fr.maboite.webshop.model.Reservation;
 
 @Service
@@ -58,6 +61,26 @@ public class ReservationService {
 		return this.reservationDao.findByNomIgnoreCaseContaining(PartNom);
 	}
 	
+	public List<Reservation> queryFindByNom(String nom){
+		return this.reservationDao.queryFindByNom(nom);
+	}
+	
+	public List<Reservation> queryFindByNomOrDebut(String nom, LocalDate debut){
+		return this.reservationDao.queryFindByNomOrDebut(nom,debut);
+	}
+	
+	public List<Reservation> queryFindByNomAndDebut(String nom, LocalDate debut){
+		return this.reservationDao.queryFindByNomAndDebut(nom,debut);
+	}
+
+	public List<Reservation> querySortByNomAsc(){
+		return this.reservationDao.queryFindByNomAsc();
+	}
+	
+	public List<Reservation> findByHotelVille(String ville){
+		return this.reservationDao.findByHotelVille(ville);
+	}
+
 	public Reservation demandeDeReservation(DemandeReservation demandeReservation) {
 		if(demandeReservation.getHotel()==null) {
 			return null;

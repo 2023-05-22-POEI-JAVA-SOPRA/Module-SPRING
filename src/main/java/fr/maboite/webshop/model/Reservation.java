@@ -6,6 +6,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity @Table
@@ -17,7 +20,19 @@ public class Reservation {
 	private LocalDate debut;
 	private LocalDate fin;
 	
+	@ManyToOne
+	@JoinColumn(name="hotel_id")
+	private Hotel hotel;
 	
+	
+	public Hotel getHotel() {
+		return hotel;
+	}
+
+	public void setHotel(Hotel hotel) {
+		this.hotel = hotel;
+	}
+
 	public Long getId() {
 		return id;
 	}

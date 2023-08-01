@@ -18,3 +18,4 @@ buildNumber.properties
 *.zip
 *.index
 *.threads
+src/main/resources/META-INF/persistence.xml
