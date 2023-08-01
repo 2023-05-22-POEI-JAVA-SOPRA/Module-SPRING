@@ -18,7 +18,7 @@ public class Article {
 
 	private String brand;
 
-	@Column(name="unitaryPrice")
+	@Column(name="unitaryprice")
 	private Float price;
 	
 	private static final Double maxPrice = 500.00;
