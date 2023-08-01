@@ -13,17 +13,17 @@ public class Role {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idRole;
+	private Integer idrole;
 
-	@Column(name = "roleName")
+	@Column(name = "rolename")
 	private String name;
 
 	public Integer getIdRole() {
-		return idRole;
+		return idrole;
 	}
 
 	public void setIdRole(Integer idRole) {
-		this.idRole = idRole;
+		this.idrole = idRole;
 	}
 
 	public String getName() {
@@ -36,7 +36,7 @@ public class Role {
 
 	@Override
 	public String toString() {
-		return "Role [idRole=" + idRole + ", name=" + name + "]";
+		return "Role [idRole=" + idrole + ", name=" + name + "]";
 	}
 	
 	

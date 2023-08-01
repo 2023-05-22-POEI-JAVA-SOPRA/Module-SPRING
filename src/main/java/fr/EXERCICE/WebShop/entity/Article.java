@@ -13,13 +13,13 @@ import javax.persistence.Table;
 public class Article {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idArticle;
+	private Integer idarticle;
 
 	private String description;
 
 	private String brand;
 
-	@Column(name="unitaryPrice")
+	@Column(name="unitaryprice")
 	private Float price;
 	
 	private static final Double maxPrice = 500.00;
@@ -29,11 +29,11 @@ public class Article {
 	}
 
 	public Integer getIdArticle() {
-		return idArticle;
+		return idarticle;
 	}
 
 	public void setIdArticle(Integer idArticle) {
-		this.idArticle = idArticle;
+		this.idarticle = idArticle;
 	}
 
 	public String getDescription() {
@@ -62,7 +62,7 @@ public class Article {
 
 	@Override
 	public String toString() {
-		return "Article [idArticle=" + idArticle + ", description=" + description + ", brand=" + brand + ", price="
+		return "Article [idArticle=" + idarticle + ", description=" + description + ", brand=" + brand + ", price="
 				+ price + "]";
 	}		
 
