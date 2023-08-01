@@ -20,6 +20,8 @@ public interface ExampleSpringDao extends CrudRepository<Example,Long>{
 	
 	List<Example> findByNomContainingIgnoreCase(String partName);
 	
+	
+	// ====== 01/08/2023 exo 1 création de query spécifique
 	//@Query de SpringData exemple de cours
 	@Query("from Example where nom=:nom order by taille desc, id desc") //@Query de SpringData
 	List<Example> maQueryPerso(@Param("nom")String nom);
@@ -31,4 +33,10 @@ public interface ExampleSpringDao extends CrudRepository<Example,Long>{
 	//ma seconde query
 	@Query("FROM Example WHERE LOWER(nom) LIKE %:nom% ORDER BY nom ASC")
 	List<Example> getAnimalsByNom(@Param("nom")String nom);
+	
+	//=== 01/08/2023 exo 2 jointure avec une table category
+	// Modification de la table Example (ajout de la clé étrangère
+	// + création table Category
+	List<Example> findByCategoryNom(String nom);
+	
 }

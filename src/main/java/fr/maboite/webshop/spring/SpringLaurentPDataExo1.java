@@ -97,7 +97,7 @@ public class SpringLaurentPDataExo1{
 		
 		
 		//=============================================
-		//=== 01/08/2023 exo2   QUERY METHODS Perso ===
+		//=== 01/08/2023 exo1   QUERY METHODS Perso ===
 		//=============================================
 		
 		System.out.println();
@@ -132,8 +132,31 @@ public class SpringLaurentPDataExo1{
 		for (Example example : examplesQueryPerso3) {			
 			System.out.println(example);
 		}
-
 		
+		
+		//=================================================
+		//=== 01/08/2023 exo2   Jointure table category ===
+		//=================================================
+
+		System.out.println();
+		System.out.println("===============================================");
+		System.out.println("=== Utilisation getExampleByCategory (Fruit)===");
+		System.out.println("===============================================");
+		Iterable<Example> examplesQueryPerso4=
+				monService.getExampleByCategory("Fruit");
+		for (Example example : examplesQueryPerso4) {			
+			System.out.println(example);
+		}
+		
+		System.out.println();
+		System.out.println("===============================================");
+		System.out.println("=== Utilisation getExampleByCategory (Animal)===");
+		System.out.println("===============================================");
+		Iterable<Example> examplesQueryPerso5=
+				monService.getExampleByCategory("Animal");
+		for (Example example : examplesQueryPerso5) {			
+			System.out.println(example);
+		}
 		
 		
 		

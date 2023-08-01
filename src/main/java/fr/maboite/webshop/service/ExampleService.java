@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import fr.maboite.webshop.model.CategoryDao;
 import fr.maboite.webshop.model.Example;
 import fr.maboite.webshop.model.ExampleSpringDao;
 
@@ -13,6 +14,9 @@ public class ExampleService {
 	
 	@Autowired
 	private ExampleSpringDao exampleDao;
+	
+	@Autowired
+	private CategoryDao categoryDao;
 	
 	public Example save(Example example) {
 		
@@ -59,10 +63,13 @@ public class ExampleService {
 	public List<Example> getAnimalsByNoms(String nom){
 		return this.exampleDao.getAnimalsByNom(nom);
 	}
-	
+	// ATTENTION Certaines méthodes ne fonctionnent pas sous Postgresql
 //	public List<Example> getByForchetta(String nom,Float borne1, Float borne2){
 //		return this.exampleDao.findByNomOrTailleWithin(nom, borne1,  borne2);
 //	}
 	
+	public List<Example> getExampleByCategory(String nom){
+		return this.exampleDao.findByCategoryNom(nom);
+	}
 	
 	}
