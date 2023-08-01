@@ -1,4 +1,4 @@
-package fr.maboite.webshop.jdbcdao;
+package fr.maboite.webshop.dao;
 
 import java.util.List;
 
