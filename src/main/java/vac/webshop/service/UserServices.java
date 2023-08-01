@@ -22,11 +22,12 @@ public class UserServices {
 	public List<User> getLoginPasswordNoCase(String login, String password) {
 		return this.userRepo.findByLoginAndPasswordAllIgnoreCase(login, password);
 	}
+	
+	public User getById(Integer id) {
+		return this.userRepo.findById(id).get();
+	}
 }
 
-//	public User getById(Integer id) {
-//		return this.userRepo.findById(id).get();
-//	}
 //	
 //	public User save(User user) {
 //		return this.userRepo.save(user);
