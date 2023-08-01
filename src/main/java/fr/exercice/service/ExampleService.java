@@ -54,4 +54,8 @@ public class ExampleService {
 	public void deleteById(Long id) {
 		this.exampleRepo.deleteById(id);
 	}
+	
+	public List<Example> getByCategory_Nom(String nom){
+		return this.exampleRepo.findByCategory_Nom(nom);
+	}
 }

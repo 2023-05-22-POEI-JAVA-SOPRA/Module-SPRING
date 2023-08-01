@@ -29,22 +29,21 @@ public class ExampleApplication {
 //			exampleService.deleteById(3l);
 //			exampleService.deleteById(14l);
 //			exampleService.deleteById(15l);
-			
-			List<Example> listExNom = exampleService.getAllOrdByNom();
+
+			List<Example> listExNom = exampleService.getByCategory_Nom("Maison");
 			for (Example example : listExNom) {
 				System.out.println(example.getNom());
 			}
-			
-			List<Example> listExNom2 = exampleService.getByNom2("genereux");
-			for (Example example : listExNom2) {
-				System.out.println(example.getNom());
-			}
-			
-		
-			
+//			
+//			List<Example> listExNom2 = exampleService.getByNom2("genereux");
+//			for (Example example : listExNom2) {
+//				System.out.println(example.getNom());
+//			}
+
 			Iterable<Example> listExamples = exampleService.getAll();
 			for (Example example2 : listExamples) {
-				System.out.println("Id : " + example2.getId()+", Nom : "+ example2.getNom());
+				System.out.println("Id : " + example2.getId() + ", Nom : " + example2.getNom() + ", Category : "
+						+ example2.getCategory().getNom());
 			}
 		}
 	}
