@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity // Décrit une entité persistable
@@ -19,6 +21,10 @@ public class Example  {
 	private String nom;
 	
 	private Float taille;
+	
+	@ManyToOne
+	@JoinColumn(name = "category_id")
+	private Category categoryId;
 	
 	public Long getId() {
 		return id;
@@ -43,6 +49,18 @@ public class Example  {
 	public void setTaille(Float taille) {
 		this.taille = taille;
 	}
+
+	public Category getCategoryId() {
+		return categoryId;
+	}
+
+	public void setCategoryId(Category categoryId) {
+		this.categoryId = categoryId;
+	}
+
+	
+	
+	
 
 
 }

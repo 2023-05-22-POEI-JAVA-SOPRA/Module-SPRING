@@ -1,4 +1,4 @@
-package fr.maboite.webshop.spring.real.configuration;
+package fr.tp.shopi.spring.configuration;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -16,13 +16,12 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 //Active les Repositories JPA trouvés
 //dans le package fourni en paramètre
-@EnableJpaRepositories("fr.maboite.webshop.service")
+@EnableJpaRepositories("fr.tp.shopi.service")
 
 //Scanne les composants trouvés dans le
 //package fourni en paramètre
-@ComponentScan("fr.maboite.webshop.service")
-public class SpringConfiguration {
-
+@ComponentScan("fr.tp.shopi.service")
+public class TpShopiSpringConfiguration {
 	//Définit le nom de l'unité de persistence 
 	private static final String PERSISTENCE_UNIT_NAME = "persistence-unit";
 
@@ -50,5 +49,4 @@ public class SpringConfiguration {
 				emf);
 		return transactionManager;
 	}
-
 }
