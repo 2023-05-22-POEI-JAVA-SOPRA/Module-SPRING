@@ -10,6 +10,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 
+import fr.maboite.webshop.service.RoleService;
+
 //Déclare un bean de configuration
 //ce bean va créer d'autres instances
 @Configuration
@@ -20,7 +22,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 //Scanne les composants trouvés dans le
 //package fourni en paramètre
-@ComponentScan("fr.maboite.webshop.service")
+@ComponentScan({"fr.maboite.webshop.service", "fr.maboite.webshop.model"})
 public class SpringConfiguration {
 
 	//Définit le nom de l'unité de persistence 
@@ -50,5 +52,7 @@ public class SpringConfiguration {
 				emf);
 		return transactionManager;
 	}
+	
+	
 
 }
