@@ -1,14 +1,18 @@
 package vac.webshop.entity;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table (name = "T_articles")
 public class Article {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idArticle;
+	private Integer idarticle;
 
 	private String description;
 
@@ -24,11 +28,11 @@ public class Article {
 	}
 
 	public Integer getIdArticle() {
-		return idArticle;
+		return idarticle;
 	}
 
 	public void setIdArticle(Integer idArticle) {
-		this.idArticle = idArticle;
+		this.idarticle = idArticle;
 	}
 
 	public String getDescription() {
