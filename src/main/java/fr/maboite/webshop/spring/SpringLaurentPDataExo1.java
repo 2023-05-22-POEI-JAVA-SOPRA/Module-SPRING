@@ -31,6 +31,9 @@ public class SpringLaurentPDataExo1{
 			}
 		}
 		
+		//============================================================
+		//=== 31/07/2023 exo1   QUERY METHODS + BONUS (Containing) ===
+		//=============================================================
 		Iterable<Example> examplesByName=monService.getByNom("Léopard");
 		System.out.println("=========================================");
 		System.out.println("===  Utilisation getByNom (Leopard) : ===");
@@ -80,12 +83,56 @@ public class SpringLaurentPDataExo1{
 		for (Example example : examplesByPartName) {			
 			System.out.println(example);
 		}
+		
 		//essai de within mais ne fonctionne pas sous postgre
 //		Iterable<Example> examplesFouchette=
 //				monService.getByForchetta("Lion", 0.7f,0.9f);
 //		for (Example example : examplesFouchette) {			
 //			System.out.println(example);
 //		}
+		
+		//================================================================
+		//=== 31/07/2023 exo1   FIN QUERY METHODS + BONUS (Containing) ===
+		//================================================================
+		
+		
+		//=============================================
+		//=== 01/08/2023 exo2   QUERY METHODS Perso ===
+		//=============================================
+		
+		System.out.println();
+		System.out.println("=============================================");
+		System.out.println("=== Utilisation getNomOrderByTailleIdDesc ===");
+		System.out.println("=============================================");
+		Iterable<Example> examplesQueryPerso=
+				monService.getNomOrderByTailleIdDesc("Crocodile");
+		for (Example example : examplesQueryPerso) {			
+			System.out.println(example);
+		}
+		
+		
+		System.out.println();
+		System.out.println("=====================================================================");
+		System.out.println("=== Utilisation Query Perso 2 order by 1.0<taille<2.0 contenant P ===");
+		System.out.println("=====================================================================");
+		Iterable<Example> examplesQueryPerso2=
+				monService.getAnimalByTailleContenantLettre("p",(Float)1f,(Float)2f);
+		for (Example example : examplesQueryPerso2) {			
+			System.out.println(example);
+		}
+		
+		
+		
+		System.out.println();
+		System.out.println("=====================================================================");
+		System.out.println("=== Utilisation Query Perso 2 order by 1.0<taille<2.0 contenant P ===");
+		System.out.println("=====================================================================");
+		Iterable<Example> examplesQueryPerso3=
+				monService.getAnimalsByNoms("poisson");
+		for (Example example : examplesQueryPerso3) {			
+			System.out.println(example);
+		}
+
 		
 		
 		

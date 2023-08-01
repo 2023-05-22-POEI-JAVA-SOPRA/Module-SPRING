@@ -47,6 +47,19 @@ public class ExampleService {
 	public List<Example> getByNameOrTaille(String nom, Float taille){
 		return this.exampleDao.findByNomOrTailleGreaterThanEqual(nom,taille);
 	}
+	
+	public List<Example> getNomOrderByTailleIdDesc(String nom){
+		return this.exampleDao.maQueryPerso(nom);
+	}
+	
+	public List<Example> getAnimalByTailleContenantLettre(String nom, Float taille1, Float taille2){
+		return this.exampleDao.getAnimalsBySizeAndName(nom,taille1,taille2);
+	}
+	
+	public List<Example> getAnimalsByNoms(String nom){
+		return this.exampleDao.getAnimalsByNom(nom);
+	}
+	
 //	public List<Example> getByForchetta(String nom,Float borne1, Float borne2){
 //		return this.exampleDao.findByNomOrTailleWithin(nom, borne1,  borne2);
 //	}
