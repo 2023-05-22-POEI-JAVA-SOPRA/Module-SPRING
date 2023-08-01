@@ -1,16 +1,19 @@
 package fr.maboite.webshop.service;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
+import fr.maboite.webshop.jdbcdao.ReservationDao;
 import fr.maboite.webshop.model.DemandeReservation;
 import fr.maboite.webshop.model.Reservation;
 
-@Component
+@Service
 public class ReservationService {
 
 	@Autowired
@@ -21,9 +24,38 @@ public class ReservationService {
 		return this.reservationDao.save(reservation);
 	}
 	
-	public Reservation get(Integer id) {
+	public Reservation get(Long id) {
 		System.out.println("Appel de get ReservationService");
-		return this.reservationDao.get(id);
+		return this.reservationDao.findById(id).get();
+	}
+	
+	public Iterable<Reservation> getAll(){
+		return this.reservationDao.findAll();
+	}
+	
+	public void delete(Long id) {
+		System.out.println("Appel de delete ReservationService");
+		this.reservationDao.deleteById(id);
+	}
+	
+	public List<Reservation> findByNom(String nom){
+		return this.reservationDao.findByNom(nom);
+	}
+	
+	public List<Reservation> findByNomIgnoreCase(String nom){
+		return this.reservationDao.findByNomIgnoreCase(nom);
+	}
+	
+	public List<Reservation> findByNomAndDebut(String nom, LocalDate debut){
+		return this.reservationDao.findByNomAndDebut(nom,debut);
+	}
+	
+	public List<Reservation> findDistinctReservationByNomOrDebut(String nom, LocalDate debut){
+		return this.reservationDao.findDistinctReservationByNomOrDebut(nom,debut);
+	}
+	
+	public List<Reservation> findByNomIgnoreCaseContaining(String PartNom){
+		return this.reservationDao.findByNomIgnoreCaseContaining(PartNom);
 	}
 	
 	public Reservation demandeDeReservation(DemandeReservation demandeReservation) {
@@ -41,7 +73,7 @@ public class ReservationService {
 			System.out.println("La réservation est impossible car cette plage n'existe pas.");
 			return null;
 		}
-		return new Reservation(2,demandeReservation.getNom(),demandeReservation.getDebut(),demandeReservation.getFin());
+		return new Reservation((long) 2,demandeReservation.getNom(),demandeReservation.getDebut(),demandeReservation.getFin());
 	}
 	
 }

@@ -2,19 +2,27 @@ package fr.maboite.webshop.model;
 
 import java.time.LocalDate;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity @Table
 public class Reservation {
 
-	private Integer id;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	private String nom;
 	private LocalDate debut;
 	private LocalDate fin;
 	
 	
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 	
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	
@@ -47,7 +55,7 @@ public class Reservation {
 		super();
 	}
 	
-	public Reservation(Integer id, String nom, LocalDate debut, LocalDate fin) {
+	public Reservation(Long id, String nom, LocalDate debut, LocalDate fin) {
 		super();
 		this.id = id;
 		this.nom = nom;

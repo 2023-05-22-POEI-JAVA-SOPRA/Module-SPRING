@@ -30,7 +30,7 @@ public class TPTest {
 	
 	@Test
 	public void testReservationServiceSave() {
-		Reservation reservation = new Reservation(5,"Dupont",LocalDate.now(),LocalDate.now().plusDays(15));
+		Reservation reservation = new Reservation(5l,"Dupont",LocalDate.now(),LocalDate.now().plusDays(15));
 		Reservation result = reservationService.save(reservation);
 		assertNotNull(result);
 		assertEquals(reservation.toString(), result.toString());
@@ -38,8 +38,8 @@ public class TPTest {
 	
 	@Test
 	public void testReservationServiceGet() {
-		Reservation reservation = new Reservation(5,"Dupont",LocalDate.now(),LocalDate.now().plusDays(15));
-		Reservation result = reservationService.get(5);
+		Reservation reservation = new Reservation(5l,"Dupont",LocalDate.now(),LocalDate.now().plusDays(15));
+		Reservation result = reservationService.get(5l);
 		assertNotNull(result);
 		assertEquals(result.toString(), reservation.toString());
 	}
@@ -49,7 +49,7 @@ public class TPTest {
 		DemandeReservation demande =
 				new DemandeReservation("Dupond",LocalDate.now(),LocalDate.now().plusDays(10),"la plage","hotel");
 		Reservation result = reservationService.demandeDeReservation(demande);
-		Reservation reservation = new Reservation(2,"Dupond",LocalDate.now(),LocalDate.now().plusDays(10));
+		Reservation reservation = new Reservation(2l,"Dupond",LocalDate.now(),LocalDate.now().plusDays(10));
 		assertNotNull(result);
 		assertEquals(result.toString(), reservation.toString());
 	}
