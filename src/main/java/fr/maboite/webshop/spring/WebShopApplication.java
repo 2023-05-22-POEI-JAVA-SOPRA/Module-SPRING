@@ -1,5 +1,7 @@
 package fr.maboite.webshop.spring;
 
+import java.util.List;
+
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import vac.webshop.configuration.WebShopConfig;
@@ -28,6 +30,14 @@ public class WebShopApplication {
 		for (User user : users) {
 			System.out.println(user.getLogin());
 		}
+		
+		System.out.println("========= Récupération des Users par login & password =========");
+		List<User> myUser = userBean.getLoginPasswordNoCase("bond", "james");
+		System.out.println("User By Login & Password : ");
+		for (User user : myUser) {
+			System.out.println("l'utilisateur porte l'id : " + user.getIdUser());
+		}
+		
 		
 		System.out.println("========= Récupération des marques d'Articles en BDD =========");
 		Iterable<Article> articles = articleBean.getAll();
