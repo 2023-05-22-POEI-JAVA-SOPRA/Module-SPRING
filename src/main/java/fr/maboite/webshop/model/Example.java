@@ -1,9 +1,12 @@
 package fr.maboite.webshop.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity // Décrit une entité persistable
@@ -19,6 +22,10 @@ public class Example  {
 	private String nom;
 	
 	private Float taille;
+	
+	@ManyToOne
+	@JoinColumn(name="CATEGORY_ID")
+	private Category categorie;
 	
 	public Long getId() {
 		return id;
@@ -44,5 +51,14 @@ public class Example  {
 		this.taille = taille;
 	}
 
+	public Category getCategorie() {
+		return categorie;
+	}
 
+	public void setCategorie(Category categorie) {
+		this.categorie = categorie;
+	}
+
+
+	
 }
