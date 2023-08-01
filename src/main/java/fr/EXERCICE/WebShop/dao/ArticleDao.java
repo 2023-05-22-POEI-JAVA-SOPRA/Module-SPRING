@@ -1,5 +1,9 @@
 package fr.EXERCICE.WebShop.dao;
 
-public interface ArticleDao {
+import org.springframework.data.repository.CrudRepository;
+
+import fr.EXERCICE.WebShop.entity.Article;
+
+public interface ArticleDao extends CrudRepository<Article,Integer>{
 
 }

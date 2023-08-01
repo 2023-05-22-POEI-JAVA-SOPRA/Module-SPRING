@@ -12,21 +12,20 @@ import javax.persistence.Table;
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-
-	private Integer idUser;
+	private Integer iduser;
 
 	private String login;
 
 	private String password;
 
-	private Integer connectionNumber;
+	private Integer connectionnumber;
 
 	public Integer getIdUser() {
-		return idUser;
+		return iduser;
 	}
 
 	public void setIdUser(Integer idUser) {
-		this.idUser = idUser;
+		this.iduser = idUser;
 	}
 
 	public String getLogin() {
@@ -46,17 +45,17 @@ public class User {
 	}
 
 	public Integer getConnectionNumber() {
-		return connectionNumber;
+		return connectionnumber;
 	}
 
 	public void setConnectionNumber(Integer connectionNumber) {
-		this.connectionNumber = connectionNumber;
+		this.connectionnumber = connectionNumber;
 	}
 
 	@Override
 	public String toString() {
-		return "User [idUser=" + idUser + ", login=" + login + ", password=" + password + ", connectionNumber="
-				+ connectionNumber + "]";
+		return "User [idUser=" + iduser + ", login=" + login + ", password=" + password + ", connectionNumber="
+				+ connectionnumber + "]";
 	}
 	
 	

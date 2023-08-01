@@ -4,6 +4,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import fr.EXERCICE.WebShop.configuration.SpringConfig;
 import fr.EXERCICE.WebShop.entity.User;
+import fr.EXERCICE.WebShop.service.serviceUser;
 
 public class main {
 
@@ -16,9 +17,13 @@ public class main {
 			System.out.println("Contexte Spring démarré");
 
 			//ExampleService monService=appContext.getBean(ExampleService.class);
-
+			serviceUser monUserService=appContext.getBean(serviceUser.class);
 			
-			User monUser=new User();
+			//Test getAll Users
+			Iterable<User> users=monUserService.getAll();
+			for (User user : users) {
+				System.out.println(user);
+			}
 	}
 
 }
