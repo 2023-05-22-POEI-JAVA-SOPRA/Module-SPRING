@@ -21,18 +21,13 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 //Scanne les composants trouvés dans le
 //package fourni en paramètre
-@EnableTransactionManagement
+@EnableTransactionManagement 
 @ComponentScan("fr.maboite.webshop.service")
 public class SpringConfiguration {
 
-	//Définit le nom de l'unité de persistence 
 	private static final String PERSISTENCE_UNIT_NAME = "persistence-unit";
 
-	/**
-	 * Crée une entityManagerFactory, utilisée pour 
-	 * créer des entityManagers
-	 * @return
-	 */
+
 	@Bean
 	public EntityManagerFactory entityManagerFactory() {
 		return Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
