@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
-import fr.maboite.webshop.correction.service.MonPremierService;
 import fr.maboite.webshop.spring.real.configuration.MaConfigurationFacile;
 
 @SpringJUnitConfig(MaConfigurationFacile.class)

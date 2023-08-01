@@ -10,27 +10,27 @@ import fr.maboite.webshop.correction.dao.HotelDao;
 
 @Service
 public class HotelService {
-	
+
 	@Autowired
 	private HotelDao hotelDao;
-	
+
 	public Hotel save(Hotel hotel) {
 		return this.hotelDao.save(hotel);
 	}
-	
+
 	public Iterable<Hotel> getAll() {
 		return this.hotelDao.findAll();
 	}
-	
+
 	public Hotel getById(Integer id) {
 		return this.hotelDao.findById(id).get();
 	}
-	
+
 	public String delete(Integer id) {
 		this.hotelDao.deleteById(id);
 		return "Hôtel " + id + " supprimé.";
 	}
-	
+
 //	public List<Hotel> searchByName(String name) {
 //        return hotelDao.findByNom(name);
 //    }
@@ -50,22 +50,22 @@ public class HotelService {
 //    public List<Hotel> searchByPartialNameIgnoreCase(String partOfName) {
 //        return hotelDao.findByNomContainingIgnoreCase(partOfName);
 //    }
-    
-	//Méthodes avec @Query//
-    public List<Hotel> searchByNom(String nom) {
-        return hotelDao.findByNom(nom);
-    }
 
-    public List<Hotel> searchByNomAndVilleOr(String nom, String ville) {
-        return hotelDao.findByNomAndVilleOr(nom, ville);
-    }
+	// Méthodes avec @Query//
+	public List<Hotel> searchByNom(String nom) {
+		return hotelDao.findByNom(nom);
+	}
 
-    public List<Hotel> getAllHotelsSortedByNomAsc() {
-        return hotelDao.findAllSortedByNomAsc();
-    }
+	public List<Hotel> searchByNomAndVilleOr(String nom, String ville) {
+		return hotelDao.findByNomAndVilleOr(nom, ville);
+	}
 
-    public List<Hotel> getAllHotelsSortedByNomDesc() {
-        return hotelDao.findAllSortedByNomDesc();
-    }
+	public List<Hotel> getAllHotelsSortedByNomAsc() {
+		return hotelDao.findAllSortedByNomAsc();
+	}
+
+	public List<Hotel> getAllHotelsSortedByNomDesc() {
+		return hotelDao.findAllSortedByNomDesc();
+	}
 
 }

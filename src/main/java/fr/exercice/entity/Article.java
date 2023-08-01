@@ -19,9 +19,9 @@ public class Article {
 
 	private String brand;
 
-	@Column(name="unitaryPrice")
-	private Float price;
-	
+	@Column(name = "unitaryPrice")
+	private Double price;
+
 	private static final Double maxPrice = 500.00;
 
 	public static Double getMaxprice() {
@@ -52,11 +52,11 @@ public class Article {
 		this.brand = brand;
 	}
 
-	public Float getPrice() {
+	public Double getPrice() {
 		return price;
 	}
 
-	public void setPrice(float price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 

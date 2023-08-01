@@ -11,7 +11,7 @@ import fr.maboite.hotel.entity.Hotel;
 
 @Repository
 public interface HotelDao extends CrudRepository<Hotel, Integer> {
-	
+
 //	List<Hotel> findByNom(String nom);
 //	
 //	List<Hotel> findByNomIgnoreCase(String nom);
@@ -21,17 +21,17 @@ public interface HotelDao extends CrudRepository<Hotel, Integer> {
 //	List<Hotel> findByNomOrVille(String nom, String ville);
 //	
 //	List<Hotel> findByNomContainingIgnoreCase(String partOfNom);
-	
-	@Query("SELECT h FROM Hotel h WHERE h.nom = :nom")
-    List<Hotel> findByNom(@Param("nom") String nom);
-	
-	@Query("SELECT h FROM Hotel h WHERE h.nom = :nom AND h.ville = :ville OR h.nom = :nom OR h.ville = :ville")
-    List<Hotel> findByNomAndVilleOr(@Param("nom") String nom, @Param("ville") String ville);
-	
-	@Query("SELECT h FROM Hotel h ORDER BY h.nom ASC") 
-    List<Hotel> findAllSortedByNomAsc();
 
-    @Query("SELECT h FROM Hotel h ORDER BY h.nom DESC")
-    List<Hotel> findAllSortedByNomDesc();
-	
+	@Query("SELECT h FROM Hotel h WHERE h.nom = :nom")
+	List<Hotel> findByNom(@Param("nom") String nom);
+
+	@Query("SELECT h FROM Hotel h WHERE h.nom = :nom AND h.ville = :ville OR h.nom = :nom OR h.ville = :ville")
+	List<Hotel> findByNomAndVilleOr(@Param("nom") String nom, @Param("ville") String ville);
+
+	@Query("SELECT h FROM Hotel h ORDER BY h.nom ASC")
+	List<Hotel> findAllSortedByNomAsc();
+
+	@Query("SELECT h FROM Hotel h ORDER BY h.nom DESC")
+	List<Hotel> findAllSortedByNomDesc();
+
 }
