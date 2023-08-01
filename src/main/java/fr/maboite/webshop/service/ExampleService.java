@@ -4,7 +4,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import fr.maboite.webshop.model.Category;
 import fr.maboite.webshop.model.CategoryDao;
 import fr.maboite.webshop.model.Example;
 import fr.maboite.webshop.model.ExampleSpringDao;
@@ -70,6 +72,18 @@ public class ExampleService {
 	
 	public List<Example> getExampleByCategory(String nom){
 		return this.exampleDao.findByCategoryNom(nom);
+	}
+	
+	//Fondamentaux @Transactional
+	@Transactional
+	public Example assiciateWithCategory(Example example, String categoryName) {
+		Category category= this.categoryDao.findByNom();
+		category.setNom("Saaaaaaalut!");
+		this.categoryDao.save(category);
+		
+		example.setCategory(category);
+		Example exampleSaved=this.exampleDao.save(example);
+		return exampleSaved;
 	}
 	
 	}

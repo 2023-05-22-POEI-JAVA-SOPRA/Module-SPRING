@@ -61,7 +61,7 @@ public class Example  {
 
 	@Override
 	public String toString() {
-		return "Example [id=" + id + ", nom=" + nom + ", taille=" + taille + ", category=" + category + "]";
+		return "Example [id=" + id + ", nom=" + nom + ", taille=" + taille  + "]";
 	}
 
 	
