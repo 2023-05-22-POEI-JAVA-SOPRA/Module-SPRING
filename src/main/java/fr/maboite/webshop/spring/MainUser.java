@@ -14,11 +14,17 @@ public class MainUser {
 				= new AnnotationConfigApplicationContext(
 				SpringConfiguration.class)) {
 			UserService userServiceBean = appContext.getBean(UserService.class);
-			Iterable<User> userAll = userServiceBean.getAll();
 			
-			for (User user : userAll) {
-				System.out.println(user);
-			}
+//			Iterable<User> userAll = userServiceBean.getAll();
+//			for (User user : userAll) {
+//				System.out.println(user);
+//			}
+			
+			User u7 = userServiceBean.getById(7);
+			System.out.println(u7);
+			
+			User userToAdd = new User("michel@michel.com", "ygugiuiu", 456465566);
+			System.out.println(userServiceBean.save(userToAdd));
 		}
 	}
 }
