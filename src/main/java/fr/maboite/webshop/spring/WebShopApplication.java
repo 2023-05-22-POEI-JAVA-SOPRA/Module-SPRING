@@ -54,6 +54,14 @@ public class WebShopApplication {
 		}
 		
 		
+		System.out.println("========= Récupération Roles avec CONTAINING=========");
+		Iterable<Role> lesRoles = roleBean.getByNomContaining("dm");
+		System.out.println("Les différents rôles : ");
+		for (Role role : lesRoles) {
+			System.out.println(role.getName());
+		}
+		
+		
 		}
 	}
 }
