@@ -17,7 +17,6 @@ public class SpringSimpleApplicationWithConfiguration {
 			appContext.getBean(MonDeuxiemeService.class).coucou();
 
 			MonPremierService monPremierServiceVariable1 = appContext.getBean(MonPremierService.class);
-			monPremierServiceVariable1.setNom("nom 1");
 
 			monPremierServiceVariable1.coucou();
 			monPremierServiceVariable1.getMonPremierDao().coucou();
@@ -25,7 +24,6 @@ public class SpringSimpleApplicationWithConfiguration {
 
 
 			MonPremierService monPremierServiceVariable2 = appContext.getBean(MonPremierService.class);
-			System.out.println("Le nom de monPremierServiceVariable2 vaut : " + monPremierServiceVariable2.getNom());
 
 			System.out.println(
 					"Est-ce qu'il n'y a qu'une seule instance de la classe "
