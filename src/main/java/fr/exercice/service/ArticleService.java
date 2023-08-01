@@ -33,7 +33,7 @@ public class ArticleService {
 		return this.ar.findByDescriptionContainingIgnoreCase(description);
 	}
 	
-	public List<Article> getByMarqueAndPrixRange(String marque, double prixMin, double prixMax){
+	public List<Article> getByMarqueAndPrixRange(String marque, Float prixMin, Float prixMax){
 		return this.ar.findByMarqueAndPrixRange(marque, prixMin, prixMax);
 	}
 }
