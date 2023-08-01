@@ -37,6 +37,15 @@ public class ExampleService {
 	public List<Example> getByNomContaining(String nom) {
 		return this.exampleRepo.findByNomIgnoreCaseContaining(nom);
 	}
+	public List<Example> getByNom2(String nom) {
+		return this.exampleRepo.getByNom(nom);
+	}
+	public List<Example> getByNomAndTailleOrId(String nom, float taille, Long id) {
+		return this.exampleRepo.getByNomAndTailleOrId(nom, taille, id);
+	}
+	public List<Example> getAllOrdByNom() {
+		return this.exampleRepo.getAllOrderedByNom();
+	}
 
 	public Iterable<Example> getAll() {
 		return this.exampleRepo.findAll();
