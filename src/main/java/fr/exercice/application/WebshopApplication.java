@@ -56,6 +56,11 @@ public class WebshopApplication {
 			for (Article article : listArticles2) {
 				System.out.println(article.toString());
 			}
+			
+			List<Article> listArticles3 = articleService.getByDescriptionContainingIgnoreCase("souris");
+			for (Article article : listArticles3) {
+				System.out.println(article.toString());
+			}
 		}
 	}
 }
