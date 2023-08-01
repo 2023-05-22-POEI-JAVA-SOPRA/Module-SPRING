@@ -21,4 +21,5 @@ public class RoleService {
 	public List<Role> getByNomIgnoreCase(String nom) {
 		return this.roleDao.findByNomContainingIgnoreCase(nom);
 	}
+
 }
