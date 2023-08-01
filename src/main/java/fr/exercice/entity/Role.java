@@ -13,17 +13,18 @@ public class Role {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idRole;
+	@Column(name = "id_role")
+	private Integer id;
 
-	@Column(name = "roleName")
+	@Column(name = "role_name")
 	private String name;
 
-	public Integer getIdRole() {
-		return idRole;
+	public Integer getId() {
+		return id;
 	}
 
-	public void setIdRole(Integer idRole) {
-		this.idRole = idRole;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getName() {

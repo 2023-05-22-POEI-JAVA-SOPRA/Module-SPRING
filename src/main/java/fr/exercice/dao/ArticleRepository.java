@@ -15,6 +15,6 @@ public interface ArticleRepository extends CrudRepository<Article, Integer> {
 	List<Article> findByDescriptionContainingIgnoreCase(String description);
 
 	@Query("from Article where LOWER(marque) = LOWER(:marque) AND prix BETWEEN :prixMin AND :prixMax")
-	List<Article> findByDescriptionContainingAndMarqueAndPrixRange(String marque, double prixMin, double prixMax);
+	List<Article> findByMarqueAndPrixRange(String marque, double prixMin, double prixMax);
 
 }

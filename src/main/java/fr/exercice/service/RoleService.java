@@ -1,5 +1,7 @@
 package fr.exercice.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,6 +28,10 @@ public class RoleService {
 	
 	public void deleteById(Integer id) {
 		this.rr.deleteById(id);
+	}
+	
+	public List<Role> getByNameIgnoreCaseContaining(String nom){
+		return this.rr.findByNameIgnoreCaseContaining(nom);
 	}
 }
 

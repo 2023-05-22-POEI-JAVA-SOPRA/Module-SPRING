@@ -1,6 +1,8 @@
 package fr.exercice.service;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import fr.exercice.dao.UserRepository;
@@ -26,5 +28,9 @@ public class UserService {
 	
 	public void deleteById(Integer id) {
 		this.ur.deleteById(id);
+	}
+	
+	public List<User> getByLoginAndPassword(String login, String password){
+		return this.ur.findByLoginAndPassword(login, password);
 	}
 }

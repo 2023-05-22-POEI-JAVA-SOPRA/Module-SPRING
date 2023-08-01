@@ -13,13 +13,14 @@ public class Article {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idArticle;
+	@Column(name="id_article")
+	private Integer id;
 
 	private String description;
 
 	private String brand;
 
-	@Column(name="unitaryPrice")
+	@Column(name="unitary_price")
 	private Float price;
 	
 	private static final Double maxPrice = 500.00;
@@ -28,12 +29,12 @@ public class Article {
 		return maxPrice;
 	}
 
-	public Integer getIdArticle() {
-		return idArticle;
+	public Integer getId() {
+		return id;
 	}
 
-	public void setIdArticle(Integer idArticle) {
-		this.idArticle = idArticle;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getDescription() {

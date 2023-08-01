@@ -10,7 +10,6 @@ import fr.exercice.entity.User;
 @Repository
 public interface UserRepository extends CrudRepository<User, Integer>{
 	
-	public List<User> getByLoginAndPassword(String login, String password);
-	
-	
+	public List<User> findByLoginAndPassword(String login, String password);
+		
 }
