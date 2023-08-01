@@ -1,9 +1,10 @@
 package fr.maboite.webshop.service;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import fr.maboite.webshop.correction.service.MonPremierDao;
+import fr.maboite.webshop.correction.service.simple.MonPremierDao;
 
 @Service
 public class MonPremierService {
