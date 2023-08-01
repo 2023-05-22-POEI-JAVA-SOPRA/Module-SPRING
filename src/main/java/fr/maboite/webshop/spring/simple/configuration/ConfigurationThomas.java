@@ -10,8 +10,8 @@ import fr.maboite.webshop.service.PremierServiceThomas;
 @Configuration
 @ComponentScan("fr.maboite.webshop.service")
 @PropertySource("classpath:thomasProperty.properties")
-//@PropertySource("classpath:francoisPropert.properties")
 public class ConfigurationThomas {
+	
 
 	
 	@Bean(name = "instanceDansConfig")

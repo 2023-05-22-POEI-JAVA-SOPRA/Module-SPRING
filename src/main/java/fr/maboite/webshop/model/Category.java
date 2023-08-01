@@ -1,16 +1,20 @@
 package fr.maboite.webshop.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+
+
+
 @Entity
-@Table(name = "Example")
-public class Example  {
+@Table(name = "Category")
+public class Category {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,11 +22,10 @@ public class Example  {
 	
 	private String nom;
 	
-	private Float taille;
+	@OneToMany(mappedBy = "category")
+	private List<Example> examples;
+
 	
-	@ManyToOne
-	@JoinColumn(name = "category_id")
-	private Category category;
 	
 	
 	
@@ -45,13 +48,11 @@ public class Example  {
 		this.nom = nom;
 	}
 
-	public Float getTaille() {
-		return taille;
+	public List<Example> getExamples() {
+		return examples;
 	}
 
-	public void setTaille(Float taille) {
-		this.taille = taille;
+	public void setExamples(List<Example> examples) {
+		this.examples = examples;
 	}
-
-
 }

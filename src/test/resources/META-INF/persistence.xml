@@ -2,6 +2,13 @@
      http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
     <persistence-unit name="persistence-unit">
     	<class>fr.maboite.webshop.model.Example</class>
+    	<class>fr.maboite.webshop.model.Category</class>
+    	
+    	<class>fr.maboite.webshop.model.Article</class>
+    	<class>fr.maboite.webshop.model.Role</class>
+    	<class>fr.maboite.webshop.model.User</class>
+    	
+    	
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />
             <property name="javax.persistence.jdbc.url" value="jdbc:h2:file:~/h2-data/formation-spring-jpa-test" />

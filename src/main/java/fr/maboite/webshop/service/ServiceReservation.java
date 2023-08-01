@@ -29,9 +29,9 @@ public class ServiceReservation {
 	
 	public Reservation demandeReservation(DemandeReservation demande) {
 		
-		if(demande.getPlage() == null || !(demande.getPlage().endsWith("plage"))) {
+		if(demande.getPlage() == null || !(demande.getPlage().toLowerCase().endsWith("plage"))) {
 			return null;
-		} else if(demande.getHotel().startsWith("super")) {
+		} else if(demande.getHotel().toLowerCase().startsWith("super")) {
 			return null;
 		} else {
 			Reservation reservation = new Reservation();
