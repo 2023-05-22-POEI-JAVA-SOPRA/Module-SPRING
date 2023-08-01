@@ -1,44 +1,37 @@
 package fr.maboite.webshop.service;
 
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import fr.maboite.webshop.dao.spring.UserRepository;
+import fr.maboite.webshop.model.User;
 
-
-@Scope("prototype" )
-//@Scope("singleton" )
-@Component //@Service 
+@Component
 public class UserService {
 
 	@Autowired
-	private UserRoleService userRoleService;
+	private UserRepository userRepository;
 	
-	@Value(value = "${userserv.minage}")
-	private Integer minAge;
-	
-	public void hello() {
-		System.out.println("Hello User service ! :) ");
+	public Iterable<User> getAll()
+	{
+		return userRepository.findAll();
 	}
 	
-	public UserService() {
-		System.out.println("User service started");
+	public User  getById(Integer id)
+	{
+		return userRepository.findById(id).orElse(null);
 	}
 	
-	public UserRoleService getUserRoleService() {
-		return userRoleService;
+	public User save(User user)
+	{
+		return userRepository.save(user);
 	}
-
-	public Integer getMinAge() {
-		return minAge;
+	public List<User>  getByLoginAndPassword(String login, String password)
+	{
+		return userRepository.findByLoginAndPassword(login,password);
 	}
-
-	public void setMinAge(Integer minAge) {
-		this.minAge = minAge;
-	}
-
-	public void setUserRoleService(UserRoleService userRoleService) {
-		this.userRoleService = userRoleService;
-	}
+	
 }

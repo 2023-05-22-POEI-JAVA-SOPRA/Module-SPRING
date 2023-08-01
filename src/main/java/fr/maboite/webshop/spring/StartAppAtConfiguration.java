@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 import fr.maboite.webshop.service.MonPremierService;
 import fr.maboite.webshop.service.MyService;
-import fr.maboite.webshop.service.UserService;
+import fr.maboite.webshop.service.UserServicess;
 import fr.maboite.webshop.spring.simple.configuration.SpringSimpleConfiguration;
 
 @Configuration
@@ -36,8 +36,8 @@ public class StartAppAtConfiguration {
 
 				// TP2 Bonus
 
-				UserService userService1 = appContext.getBean(UserService.class);
-				UserService userService2 = appContext.getBean(UserService.class);
+				UserServicess userService1 = appContext.getBean(UserServicess.class);
+				UserServicess userService2 = appContext.getBean(UserServicess.class);
 
 				System.out.println("userService1 minAge :" + userService1.getMinAge());
 				System.out.println("userService2 minAge :" + userService2.getMinAge());

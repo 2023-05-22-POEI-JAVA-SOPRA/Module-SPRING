@@ -4,7 +4,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 
 import fr.maboite.webshop.service.UserRoleService;
-import fr.maboite.webshop.service.UserService;
+import fr.maboite.webshop.service.UserServicess;
 
 public class StartApp {
 
@@ -13,11 +13,11 @@ public class StartApp {
 		
 		// Start Spring context
 		try (AnnotationConfigApplicationContext appContext 
-				= new AnnotationConfigApplicationContext(UserService.class,UserRoleService.class)) {
+				= new AnnotationConfigApplicationContext(UserServicess.class,UserRoleService.class)) {
 			System.out.println("Spring context started");
 
 			// Récupération du bean instancié par Spring 
-			UserService userServiceBean = appContext.getBean(UserService.class);
+			UserServicess userServiceBean = appContext.getBean(UserServicess.class);
 			userServiceBean.hello();
 			userServiceBean.getUserRoleService().hello();	
 			

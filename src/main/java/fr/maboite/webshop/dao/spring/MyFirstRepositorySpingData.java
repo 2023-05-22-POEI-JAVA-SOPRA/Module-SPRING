@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import fr.maboite.webshop.model.Example;
 
 
-@Repository
+//@Repository
 public interface MyFirstRepositorySpingData extends CrudRepository<Example,Long>{
 	
 	List<Example> findByNom(String nom);

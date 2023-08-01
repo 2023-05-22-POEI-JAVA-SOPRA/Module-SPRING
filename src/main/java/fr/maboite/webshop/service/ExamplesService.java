@@ -11,7 +11,7 @@ import fr.maboite.webshop.model.Example;
 @Component
 public class ExamplesService {
 	
-	@Autowired
+	//@Autowired
 	private MyFirstRepositorySpingData firstRepositorySpingData;
 
 	/**Save an example

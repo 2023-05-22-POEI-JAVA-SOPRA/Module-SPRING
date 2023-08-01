@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 import fr.maboite.webshop.service.MyService;
-import fr.maboite.webshop.service.UserService;
+import fr.maboite.webshop.service.UserServicess;
 
 //Déclare un bean de configuration
 //ce bean va créer d'autres instances
