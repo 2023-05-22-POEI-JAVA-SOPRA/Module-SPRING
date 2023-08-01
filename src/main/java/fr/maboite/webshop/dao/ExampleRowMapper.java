@@ -1,4 +1,4 @@
-package fr.maboite.webshop.jdbcdao;
+package fr.maboite.webshop.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

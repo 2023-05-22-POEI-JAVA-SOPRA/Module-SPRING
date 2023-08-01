@@ -1,4 +1,4 @@
-package fr.maboite.webshop.jdbcdao;
+package fr.maboite.webshop.dao;
 
 import java.util.List;
 
@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
-import fr.maboite.webshop.model.Example;
 
 /**
  * DAO pour la classe Example.

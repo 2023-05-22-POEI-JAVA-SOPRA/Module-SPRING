@@ -2,8 +2,8 @@ package fr.maboite.webshop.spring;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import fr.maboite.webshop.jdbcdao.ExampleJdbcDao;
-import fr.maboite.webshop.jdbcdao.ExampleJdbcNamedDao;
+import fr.maboite.webshop.dao.ExampleJdbcDao;
+import fr.maboite.webshop.dao.ExampleJdbcNamedDao;
 import fr.maboite.webshop.model.Example;
 import fr.maboite.webshop.spring.simple.configuration.SpringJdbcTemplateConfiguration;
 

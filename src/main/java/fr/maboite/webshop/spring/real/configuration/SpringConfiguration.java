@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 //Déclare un bean de configuration
 //ce bean va créer d'autres instances
@@ -20,6 +21,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 //Scanne les composants trouvés dans le
 //package fourni en paramètre
+@EnableTransactionManagement
 @ComponentScan("fr.maboite.webshop.service")
 public class SpringConfiguration {
 
