@@ -46,6 +46,20 @@ public class WebShopApplication {
 			System.out.println(article.getBrand());
 		}
 		
+		System.out.println("========= Récupération d'Articles avec une partie de description =========");
+		Iterable<Article> lesArticles = articleBean.getArticleWithDescription("pto");
+		System.out.println("Marques correspondantes : ");
+		for (Article article : lesArticles) {
+			System.out.println(article.getBrand());
+		}
+		
+		System.out.println("========= Récupération d'Articles avec Brand et Price BETWEEN =========");
+		Iterable<Article> art = articleBean.getArticleByBrandAndPrice("cetme", 100f, 780f);
+		System.out.println("Marques correspondantes : ");
+		for (Article article : art) {
+			System.out.println(article.getBrand());
+		}
+		
 		System.out.println("========= Récupération des Roles en BDD =========");
 		Iterable<Role> roles = roleBean.getAll();
 		System.out.println("Les différents rôles : ");
