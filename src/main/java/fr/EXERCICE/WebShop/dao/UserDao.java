@@ -10,4 +10,6 @@ import fr.EXERCICE.WebShop.entity.User;
 @Repository
 public interface UserDao extends CrudRepository<User,Integer>{
 	List<User> findAll();
+
+	List<User> findByLoginAndPassword(String login, String password);
 }
