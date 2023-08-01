@@ -16,19 +16,13 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 //Active les Repositories JPA trouvés
 //dans le package fourni en paramètre
-<<<<<<< HEAD
-@EnableJpaRepositories("fr.maboite.webshop.correction.dao")
 
-//Scanne les composants trouvés dans le
-//package fourni en paramètre
-@ComponentScan("fr.maboite.webshop.correction.service")
-=======
 @EnableJpaRepositories("fr.exercice.dao")
 
 //Scanne les composants trouvés dans le
 //package fourni en paramètre
 @ComponentScan("fr.exercice")
->>>>>>> d58fb8ea7d9b4451e88bd2750ad2c6dabfd2bdb7
+
 public class SpringConfiguration {
 
 	//Définit le nom de l'unité de persistence 
