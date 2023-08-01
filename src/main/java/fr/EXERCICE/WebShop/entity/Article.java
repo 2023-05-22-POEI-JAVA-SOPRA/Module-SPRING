@@ -7,6 +7,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+
 
 @Entity
 @Table(name = "T_Articles")
@@ -14,12 +17,17 @@ public class Article {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idarticle;
-
+	
+	@NotNull
+	@Size(min=1,max=30,message="Description entre 1 et 30 caracteres")
 	private String description;
-
+	
+	@NotNull
+	@Size(min=1,max=30,message="Le nommage de la marque doit faire entre 1 et 30 caracteres")
 	private String brand;
 
 	@Column(name="unitaryprice")
+	@NotNull
 	private Float price;
 	
 	private static final Double maxPrice = 500.00;

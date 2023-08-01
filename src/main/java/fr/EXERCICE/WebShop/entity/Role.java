@@ -7,6 +7,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+
 @Entity
 @Table(name = "T_Roles")
 public class Role {
@@ -16,6 +19,8 @@ public class Role {
 	private Integer idrole;
 
 	@Column(name = "rolename")
+	@NotNull(message="Nom du role obligatoire")
+	@Size(min=1,max=20, message="Le nom du role doit faire entre 1 et 20 caracteres")
 	private String name;
 
 	public Integer getIdRole() {
