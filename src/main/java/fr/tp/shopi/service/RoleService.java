@@ -1,5 +1,6 @@
 package fr.tp.shopi.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,6 +45,10 @@ public class RoleService {
 
 	public void delete(Role entity) {
 		roleDao.delete(entity);
+	}
+	
+	public List<Role> findByNameContainingIgnoreCase(String name){
+		return this.roleDao.findByNameContainingIgnoreCase(name);
 	}
 
 }

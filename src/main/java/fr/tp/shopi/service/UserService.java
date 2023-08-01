@@ -1,5 +1,6 @@
 package fr.tp.shopi.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,6 +45,18 @@ public class UserService {
 
 	public void delete(User entity) {
 		userDao.delete(entity);
+	}
+	
+	public List<User> findByPassword(String password){
+		return this.userDao.findByPassword(password);
+	}
+	
+	public List<User> findByLogin(String login){
+		return this.userDao.findByLogin(login);
+	}
+	
+	public List<User> findByLoginAndPassword(String login, String password){
+		return this.userDao.findByLoginAndPassword(login, password);
 	}
 	
 	

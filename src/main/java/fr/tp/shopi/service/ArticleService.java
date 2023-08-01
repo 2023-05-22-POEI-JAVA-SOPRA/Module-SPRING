@@ -1,5 +1,6 @@
 package fr.tp.shopi.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,6 +47,13 @@ public class ArticleService {
 		articleDao.delete(entity);
 	}
 	
+	public List<Article> findByDescriptionContaining(String description){
+		return this.articleDao.findByDescriptionContaining(description);
+	}
+	
+	public List<Article> findByBrandIgnoreCaseAndUnitaryPriceBetween(String description,float min, float max){
+		return this.articleDao.findByBrandIgnoreCaseAndUnitaryPriceBetween(description, min, max);
+	}
 	
 
 }

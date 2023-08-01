@@ -13,13 +13,14 @@ public class User {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
 	private Integer idUser;
 	
 	private String login;
 	
 	private String password;
 	
-	@Column(name = "connectionNumber")
+	@Column(name = "connection_number")
 	private Integer connectionNumber;
 	
 	

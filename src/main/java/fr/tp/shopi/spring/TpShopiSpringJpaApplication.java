@@ -1,5 +1,9 @@
 package fr.tp.shopi.spring;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import fr.tp.shopi.entity.Article;
@@ -24,22 +28,51 @@ public class TpShopiSpringJpaApplication {
 			Article newArticle = new Article();
 			Role newRole = new Role();
 			
-			/* CREATION D'UN NOUVEL UTILISATEUR */
-			newUser.setLogin("walid");
-			newUser.setPassword("password123");
-			newUser.setConnectionNumber(5);
-			userServiceBean.save(newUser);
+//			/* CREATION D'UN NOUVEL UTILISATEUR */
+//			newUser.setLogin("car");
+//			newUser.setPassword("lson");
+//			newUser.setConnectionNumber(12);
+//			userServiceBean.save(newUser);
 			
-			/* CREATION D'UN NOUVEAU ROLE */
-			newRole.setName("Maitre du monde");
-			roleServiceBean.save(newRole);
+//			/* CREATION D'UN NOUVEAU ROLE */
+//			newRole.setName("geekz");
+//			roleServiceBean.save(newRole);
 			
 			/* CREATION D'UN NOUVEL ARTICLE */
-			newArticle.setDescription("article fabuleux");
-			newArticle.setBrand("Fabuloufou");
-			newArticle.setUnitaryPrice(16.85f);
-			articleServiceBean.save(newArticle);
-
+//			newArticle.setDescription("article fatigue");
+//			newArticle.setBrand("cernebleu");
+//			newArticle.setUnitaryPrice(21f);
+//			articleServiceBean.save(newArticle);
+			
+			/* GET ALL USER */
+			Iterable<User> newList = userServiceBean.findAll();
+			
+			for (User user : newList) {
+				System.out.println(user.getLogin());
+			}
+			
+			/* RECHERCHES SPECIALES SUR ARTICLE */
+			List<Article> newListArticle = articleServiceBean.findByBrandIgnoreCaseAndUnitaryPriceBetween("fabuloufou", 0, 15);
+			for (Article article : newListArticle) {
+				System.out.println(article.getDescription() +" ---- "+ article.getIdArticle());
+			}
+			
+			List<Article> newListArticle2 = articleServiceBean.findByDescriptionContaining("eux");
+			for (Article article : newListArticle2) {
+				System.out.println(article.getBrand() +" ---- "+ article.getIdArticle());
+			}
+			
+			/* RECHERCHE SPECIALE SUR ROLE */
+			List<Role> newListRole = roleServiceBean.findByNameContainingIgnoreCase("FUK");
+			for (Role role : newListRole) {
+				System.out.println(role.getIdRole() +" voici mon id!");
+			}
+			
+			/* RECHERCHEs SPECIALES SUR USER */
+			List<User> newListUser =userServiceBean.findByLoginAndPassword("walid", "password123");
+			for (User user : newListUser) {
+				System.out.println(user.getIdUser()+" voici mon id pelo!");
+			}
 		}
 	}
 

@@ -1,5 +1,6 @@
 package fr.tp.shopi.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,12 +13,13 @@ public class Article {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
 	private Integer idArticle;
 	
 	private String description;
 	
 	private String brand;
-	
+	@Column(name = "unitary_price")
 	private float unitaryPrice;
 
 	public Integer getIdArticle() {

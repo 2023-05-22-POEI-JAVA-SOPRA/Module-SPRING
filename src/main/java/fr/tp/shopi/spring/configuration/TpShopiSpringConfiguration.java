@@ -23,7 +23,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 @ComponentScan("fr.tp.shopi.service")
 public class TpShopiSpringConfiguration {
 	//Définit le nom de l'unité de persistence 
-	private static final String PERSISTENCE_UNIT_NAME = "persistence-unit";
+	private static final String PERSISTENCE_UNIT_NAME = "persistence-walid";
 
 	/**
 	 * Crée une entityManagerFactory, utilisée pour 
