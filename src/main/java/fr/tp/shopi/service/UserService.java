@@ -27,6 +27,10 @@ public class UserService {
 		this.userDao = userDao;
 	}
 
+	public UserService() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public void save(User entity) {
 		userDao.save(entity);
 	}

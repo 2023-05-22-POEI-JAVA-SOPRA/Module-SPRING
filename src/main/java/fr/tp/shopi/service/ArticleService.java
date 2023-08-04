@@ -13,6 +13,12 @@ public class ArticleService {
 	
 	@Autowired
 	private ArticleDao articleDao;
+	
+	
+
+	public ArticleService() {
+		
+	}
 
 	public ArticleDao getArticleDao() {
 		return articleDao;

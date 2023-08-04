@@ -27,6 +27,10 @@ public class RoleService {
 		this.roleDao = roleDao;
 	}
 
+	public RoleService() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public void save(Role entity) {
 		roleDao.save(entity);
 	}
