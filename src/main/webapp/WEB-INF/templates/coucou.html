@@ -16,5 +16,13 @@
     <div th:if="${monCamion =='Monbo'}">
 		<p>camion</p>
 	</div>
+	
+	<div>
+		<h1>Mes camions</h1>
+		<ul th:each="camionTemp:${maListeCamion}">
+			<li th:text="${camionTemp}">camion 1</li>
+		</ul>
+		
+	</div>
   </body>
 </html>
