@@ -8,6 +8,14 @@
 
   <body>
     <h1>Coucou les gens</h1>
-    <div>Temps horrible ici.</div>
+    <div>
+		<p th:text="${caMarche}">On test si ça marche</p>
+		<p th:text="${leBidon.nom}">Test de retour objet</p>
+	</div>
+	<div>
+		<ul >
+			<li th:each="bidonTemp : ${lesBidons}" th:if="${bidonTemp.isAffichable}" th:text="${bidonTemp.nom}"></li>
+		</ul>
+	</div>
   </body>
 </html>
