@@ -8,6 +8,20 @@
 
   <body>
     <h1>La découverte de Spring MVC</h1>
-    <div>Je suis coucou.html</div>
+    <div th:text="${monMessage}">Je suis la page coucou.html</div>
+    <div th:text="${livre.name}">livre du moment</div>
+    <div th:if="${boolean}">Je suis un boléen</div>
+    <div>
+		<h2>Livres de Franck Thilliez</h2>
+		<p style="margin-bottom: 0; padding-bottom: 0;">Avec Sharko : </p>
+		<ul style="margin-top: 0;">
+    		<li th:each="livre : ${livreThilliez}" th:if="${livre.isSharko}" th:text="${livre.name}"></li>
+		</ul>
+		
+		<p style="margin-bottom: 0; padding-bottom: 0;">Sans Sharko : </p>
+		<ul style="margin-top: 0;">
+    		<li th:each="livre : ${livreThilliez}" th:if="${!livre.isSharko}" th:text="${livre.name}"></li>
+		</ul>
+	</div>
   </body>
 </html>
