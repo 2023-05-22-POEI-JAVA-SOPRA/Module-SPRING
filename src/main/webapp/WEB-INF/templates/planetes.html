@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Mes planètes</title>
+</head>
+<body>
+<h1>Mes planetes (elles sont toutes là hein)</h1>
+
+	<ul>
+		<li th:each="planeteTemp:${maListePlanete}" 
+		th:text="${planeteTemp.name}"><a></a></li>
+	</ul>
+
+</body>
+</html>

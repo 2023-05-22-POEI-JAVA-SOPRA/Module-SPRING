@@ -7,7 +7,7 @@
   </head>
 
   <body>
-    <h1>COUCOU les gens</h1>
+    <h1 th:text="${coucou}">COUCOU les gens</h1>
     <p th:text="${maValeur}">Au fait, il fait MOCHE.</p>
     <p>Nom de mon camion : </p>
     <p th:text="${monCamion}">Mon camion</p>
@@ -19,8 +19,8 @@
 	
 	<div>
 		<h1>Mes camions</h1>
-		<ul th:each="camionTemp:${maListeCamion}">
-			<li th:text="${camionTemp}">camion 1</li>
+		<ul >
+			<li th:each="camionTemp:${maListeCamion}" th:text="${camionTemp}">camion 1</li>
 		</ul>
 		
 	</div>
