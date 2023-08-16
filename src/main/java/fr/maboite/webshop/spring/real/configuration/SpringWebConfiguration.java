@@ -1,4 +1,5 @@
 package fr.maboite.webshop.spring.real.configuration;
+// le nom de ce package doit être dans le fichier spring-servlet.xml
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
@@ -20,7 +21,7 @@ import org.thymeleaf.templatemode.TemplateMode;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan("fr.maboite.webshop.mvc")
+@ComponentScan("fr.maboite.webshop.controller")
 public class SpringWebConfiguration implements WebMvcConfigurer, ApplicationContextAware {
 
 	private ApplicationContext applicationContext;
