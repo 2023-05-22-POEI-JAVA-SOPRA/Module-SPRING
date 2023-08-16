@@ -8,6 +8,13 @@
 
   <body>
     <h1>COUCOU les gens</h1>
-    <div>Au fait, il fait MOCHE.</div>
+    <p th:text="${maValeur}">Au fait, il fait MOCHE.</p>
+    <p>Nom de mon camion : </p>
+    <p th:text="${monCamion}">Mon camion</p>
+    
+    <p>Test du th:if="${monCamion =='Monbo'}" --> Afficher camion </p>
+    <div th:if="${monCamion =='Monbo'}">
+		<p>camion</p>
+	</div>
   </body>
 </html>
