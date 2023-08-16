@@ -8,6 +8,11 @@
 
   <body>
     <h1>Salut les gens</h1>
-    <div>Au fait, il fait beau.</div>
+    <div>
+    	<p>Message : </p>
+    	<p th:text="${monMessage}">Ici, le message</p>
+	</div>
+    	<p>Nom du camion : </p>
+	    <div th:text="${camion.nom}">Ici, le nom du camion</div>
   </body>
 </html>
