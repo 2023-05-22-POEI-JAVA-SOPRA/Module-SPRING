@@ -24,6 +24,11 @@ public class Example {
 
 	private Float taille;
 
+	@ManyToOne
+	@JoinColumn(name = "CATEGORY_ID")
+	private Category category;
+
+
 	public Long getId() {
 		return id;
 	}
