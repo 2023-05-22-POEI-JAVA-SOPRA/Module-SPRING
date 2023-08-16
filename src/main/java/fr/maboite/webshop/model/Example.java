@@ -24,6 +24,7 @@ public class Example {
 
 	private Float taille;
 
+
 	public Long getId() {
 		return id;
 	}

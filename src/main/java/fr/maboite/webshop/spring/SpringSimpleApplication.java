@@ -2,10 +2,12 @@ package fr.maboite.webshop.spring;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import fr.maboite.webshop.correction.service.MonSecondService;
+import fr.maboite.webshop.correction.service.simple.MonPremierService;
 import fr.maboite.webshop.model.Example;
 import fr.maboite.webshop.spring.real.configuration.MaConfigurationFacile;
-import fr.maboite.webshop.correction.service.MonPremierService;
-import fr.maboite.webshop.correction.service.MonSecondService;
+
+
 
 public class SpringSimpleApplication {
 

@@ -1,8 +1,9 @@
-package fr.maboite.webshop.spring.simple.configuration;
+package fr.maboite.webshop.correction.spring.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 import fr.maboite.webshop.correction.service.simple.MonDeuxiemeService;
 
@@ -12,7 +13,8 @@ import fr.maboite.webshop.correction.service.simple.MonDeuxiemeService;
 
 //Scanne les composants trouvés dans le
 //package fourni en paramètre
-@ComponentScan("fr.maboite.webshop.correction")
+@ComponentScan("fr.maboite.webshop.correction.service.simple")
+@PropertySource("classpath:example-application.properties")
 public class SpringSimpleConfiguration {
 
 	@Bean
