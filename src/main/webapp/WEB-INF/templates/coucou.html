@@ -19,10 +19,27 @@
 		<ul>
 			<li th:if="${camion.isDaily}" th:each="camion : ${listCamion}" th:text="${camion.name}"> </li>
 		</ul>
+		<h2>Liste des camions daily with hyperlinks</h2>
+		<ul>
+			<li th:if="${camion.isDaily}" th:each="camion : ${listCamion}">
+				<a href="camion.html" th:href="@{/camion/{id}(id=${camion.id})}" th:text="${camion.name}"></a>
+			</li>
+		</ul>
 		<h2>Liste des camions dans le garage</h2>
 		<ul>
 			<li th:if="${!camion.isDaily}" th:each="camion : ${listCamion}" th:text="${camion.name}"> </li>
 		</ul>
+		<h2>Liste des camions dans le garage with hyperlinks</h2>
+		<ul>
+			<li th:if="${!camion.isDaily}" th:each="camion : ${listCamion}">
+				<a href="camion.html" th:href="@{/camion/{id}(id=${camion.id})}" th:text="${camion.name}"></a>
+			</li>
+		</ul>
+	</div>
+	
+	<div>
+		<h2>HyperLinks</h2>
+		<a href="camion.html" th:href="@{/camion(id=test,foo=${msgDynamique})}">La page</a>
 	</div>
 </body>
 
