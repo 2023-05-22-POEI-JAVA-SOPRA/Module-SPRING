@@ -23,8 +23,9 @@ public class Example  {
 	private Float taille;
 	
 	@ManyToOne
-	@JoinColumn(name = "CATEGORY_ID")
+	@JoinColumn(name="CATEGORY_ID")
 	private Category category;
+	
 
 	public Long getId() {
 		return id;
@@ -49,6 +50,7 @@ public class Example  {
 	public void setTaille(Float taille) {
 		this.taille = taille;
 	}
+	
 
 	public Category getCategory() {
 		return category;
@@ -56,6 +58,11 @@ public class Example  {
 
 	public void setCategory(Category category) {
 		this.category = category;
+	}
+
+	@Override
+	public String toString() {
+		return "Example [id=" + id + ", nom=" + nom + ", taille=" + taille  + "]";
 	}
 
 }
