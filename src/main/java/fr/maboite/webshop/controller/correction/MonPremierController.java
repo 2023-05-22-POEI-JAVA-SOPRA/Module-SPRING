@@ -1,5 +1,7 @@
 package fr.maboite.webshop.controller.correction;
 
+import java.util.ArrayList;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,8 +14,27 @@ public class MonPremierController {
 		return "Message dynamique !";
 	}
 
+	@ModelAttribute("poids")
+	public Integer poids() {
+		return Integer.valueOf(3);
+	}
+
+	@ModelAttribute("camions")
+	public Iterable<Camion> camions() {
+		ArrayList<Camion> camions = new ArrayList<Camion>();
+		Camion camion1 = new Camion();
+		camion1.setId(1);
+		camion1.setNom("MAN");
+		camions.add(camion1);
+		Camion camion2 = new Camion();
+		camion2.setId(2);
+		camion2.setNom("Ford");
+		camions.add(camion2);
+		return camions;
+	}
+
 	@ModelAttribute("camion")
-	public Camion messageDynamique() {
+	public Camion camion() {
 		// En fonction d'éléments (du contexte, de la session, d'une base de donnée...)
 		Camion camion = new Camion();
 		camion.setId(1);
