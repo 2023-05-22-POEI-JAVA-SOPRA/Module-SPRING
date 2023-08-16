@@ -12,4 +12,9 @@ public class MonPremierController {
 		return "salut";
 	}
 
+	@RequestMapping(path = "/coucou")
+	public String maSecondeMethodeDeController() {
+		System.out.println("Méthode sur /coucou appelée");
+		return "coucou c est moi";
+	}
 }
