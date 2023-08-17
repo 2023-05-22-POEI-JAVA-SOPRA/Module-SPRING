@@ -8,7 +8,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import fr.exercice.entity.Category;
+
 
 @Entity // Décrit une entité persistable
 @Table(name = "Example") // Optionnel : explicite la Table en BDD
@@ -32,10 +32,6 @@ public class Example {
 	public Long getId() {
 		return id;
 	}
-
-	@ManyToOne // Relation Many-to-One avec Category
-	@JoinColumn(name = "category_id") // Clé étrangère dans la table Example
-	private Category category;
 
 	public void setId(Long id) {
 		this.id = id;

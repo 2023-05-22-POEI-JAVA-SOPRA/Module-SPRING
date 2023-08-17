@@ -23,7 +23,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 //Scanne les composants trouvés dans le
 //package fourni en paramètre
 
-@ComponentScan("fr.exercice")
 @ComponentScan("fr.maboite.webshop.correction.service")
 @EnableTransactionManagement
 public class SpringConfiguration {

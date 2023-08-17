@@ -13,7 +13,7 @@ import fr.maboite.webshop.model.Example;
 
 @Entity
 @Table(name = "Category")
-public class Category {
+public class Category2 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
