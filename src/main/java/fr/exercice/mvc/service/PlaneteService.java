@@ -24,8 +24,8 @@ public class PlaneteService {
 		System.out.println("Service démarré. Les planètes ont été ajoutées.");
 	}
 	
-	public Planete getById(Integer id) {
-		return this.planetes.get(id); // a regarder avec les indices
+	public Planete getById(Integer ordre) {
+		return this.planetes.get(ordre -1); 
 	}
 
 	public List<Planete> getAll() {

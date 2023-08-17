@@ -10,7 +10,9 @@
     <h1>Voici la liste des planètes du système solaire : </h1>
 	<div>
 		<ul >
-			<li th:each="planete : ${planetes}" th:text="${planete.nom}"></li>
+			<li th:each="planete : ${planetes}">
+				<a href="planeteDetails.html" th:href="@{/planetes/{ordre}(ordre=${planete.ordre})}" th:text="${planete.nom}"></a>
+			</li>
 		</ul>
 	</div>
   </body>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+
+  <head>
+    <title>La page de Planete</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+
+  <body>
+    <h1 th:text="${'Voici le détail de la planète '} + ${planeteDetails.nom}" > </h1>
+	<div>
+		<p>Nom :  <span th:text="${planeteDetails.nom}"> </span></p>
+		<p>Ordre par rapport au Soleil :  <span th:text="${planeteDetails.ordre}"></span></p> 
+		<p>Sa distance (en km) au Soleil est :  <span th:text="${planeteDetails.distanceDuSoleil}"></span></p> 
+		<p>Son diamètre (en km) :  <span th:text="${planeteDetails.diametre}"></span></p> 
+	</div>
+  </body>
+</html>

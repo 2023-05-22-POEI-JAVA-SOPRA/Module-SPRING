@@ -1,15 +1,12 @@
 package fr.exercice.entity;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class Planete {
 
 	private String nom;
 
 	private Integer ordre;
 
-	private long distanceDuSoleil; // en millions de kilomètres
+	private long distanceDuSoleil; // en kilomètres
 
 	private long diametre; // en kilomètres
 
