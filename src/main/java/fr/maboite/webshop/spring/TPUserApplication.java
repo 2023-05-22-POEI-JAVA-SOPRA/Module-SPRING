@@ -38,12 +38,12 @@ public class TPUserApplication {
 			//roleBean.save(new Role("user"));
 			//System.out.println(roleBean.findByNameContainsIgnoreCase("us"));
 			
-			//ArticleBean.save(new Article("trouser","H&M",44.99f));
-			//System.out.println(ArticleBean.findByDescriptionContainsIgnoreCase("Shirt"));
-			//System.out.println(ArticleBean.findByBrandIgnoreCaseAndPriceBetween("H&M", 39.99f, 50f));
+			ArticleBean.save(new Article("trouser","H&M",44.99f));
+			System.out.println(ArticleBean.findByDescriptionContainsIgnoreCase("Shirt"));
+			System.out.println(ArticleBean.findByBrandIgnoreCaseAndPriceBetween("H&M", 39.99f, 50f));
 			
 			//CommandBean.save(new Command(LocalDate.now().minusDays(21),2l));
-			System.out.println(CommandBean.findByUserLogin("lo@lo.com"));
+			//System.out.println(CommandBean.findByUserLogin("lo@lo.com"));
 		}
 		
 	}

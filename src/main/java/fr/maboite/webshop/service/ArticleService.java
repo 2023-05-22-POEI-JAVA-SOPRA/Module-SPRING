@@ -5,11 +5,12 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import fr.maboite.webshop.jdbcdao.ArticleDao;
 import fr.maboite.webshop.model.Article;
 
-@Component
+@Service
 public class ArticleService {
 
 	@Autowired
