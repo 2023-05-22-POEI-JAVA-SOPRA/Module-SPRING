@@ -6,10 +6,10 @@ import org.springframework.stereotype.Component;
 public class HotelDao {
 	
 	public void save() {
-		System.out.println("Hotel is saved");
+		System.out.println("Hotel hotel");
 	}
 	public void get() {
-		System.out.println("Hotel is getted");
+		System.out.println("Integer id");
 	}
 
 }

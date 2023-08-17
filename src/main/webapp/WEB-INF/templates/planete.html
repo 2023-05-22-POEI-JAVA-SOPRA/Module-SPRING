@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Welocome to Planetes !</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+	<div>c'est la page des planetes</div>
+	<div>Id :</div>
+	<div th:text="${planete.id}">1</div>
+	<div>nom :</div>
+	<div th:text="${planete.nom}">GM</div>
+
+	
+
+	<div>Amusons-nous avec les hyperliens :</div>
+	<p>
+		<a href="planet.html" th:href="@{/planet(id=${monMessage}}" </a>
+	</p>
+	</div>
+
+</body>
+
+</html>

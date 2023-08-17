@@ -6,10 +6,10 @@ import org.springframework.stereotype.Component;
 public class PlageDao {
 	
 	public void save() {
-		System.out.println("Plage is saved");
+		System.out.println("Hotel hotel");
 	}
 	public void get() {
-		System.out.println("Plage is getted");
+		System.out.println("Integer id");
 	}
 
 }

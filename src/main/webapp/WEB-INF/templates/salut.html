@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Ma deuxieme page Thymeleaf !</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+	<h1>Salut les conducteurs</h1>
+	<div>
+
+	<p th:text="${camion.nom}">Ça marche pas mal ici !</p>
+	<p th:text="${camion.id}">voila id !</p>
+	</div>
+	
+	
+	<div>la liste des camions :</div>
+<ol>
+	<li th:each="camionTemporaire : ${camions}" th:text="${camionTemporaire.nom}"></li>
+	</ol>
+	
+	</div>
+
+</body>
+
+</html>

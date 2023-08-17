@@ -46,9 +46,9 @@ public class HotelTest {
 	
 	@Test
 	public void test4() {
-			String resultat = serviceDemandeReservation.egal("happy");
-			Assertions.assertEquals("happy", resultat);
-			System.out.println("sorry, Hotel plein");
+			String resultat = serviceDemandeReservation.egal("plein");
+			Assertions.assertEquals("plein", resultat);
+			System.out.println("sorry,la réservation est impossible");
 		}
 			
 	}
