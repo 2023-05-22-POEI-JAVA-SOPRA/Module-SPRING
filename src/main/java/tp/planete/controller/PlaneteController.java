@@ -27,9 +27,12 @@ public class PlaneteController {
 //Recherche par l'id de la planète
 //	Avec ModelAttribute ne pas utiliser @PathVariable mais @RequestParam
 	@ModelAttribute("details")
-	public Planete recupereDetailPlanete(@RequestParam("id") Integer id){
-		Planete unePlanete = planeteService.getById(id);
-		return unePlanete;
+	public Planete recupereDetailPlanete(@RequestParam(name="id", required = false) Integer id){
+		if (id != null) {
+	        Planete unePlanete = planeteService.getById(id);
+	        return unePlanete;
+	    }
+	    return null;
 	}
 	
 //	Recherche par le nom de la planète
