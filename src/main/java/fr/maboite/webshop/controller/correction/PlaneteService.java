@@ -41,4 +41,8 @@ public class PlaneteService {
 		return this.planetes.values();
 	}
 
+	public void save(Planete planete) {
+		this.planetes.put(planete.getId(), planete);
+	}
+
 }

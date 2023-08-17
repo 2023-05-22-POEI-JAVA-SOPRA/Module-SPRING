@@ -12,11 +12,31 @@
 		Pas de planète correspondant.
 	</div>
 
+	<div th:text="${errorString}">Erreur</div>
 	<div th:if="${planete}">
-		<div>Id : </div>
-		<div th:text="${planete.id}">6</div>
-		<div>Nom : </div>
-		<div th:text="${planete.nom}">Saturne</div>
+		<form action="./planete-detail" method="POST" th:object="${planete}">
+			<div>
+				<label for="id">Id :</label>
+				<input id="id" type="text" name="id" value="45" th:value="${planete.id}" />
+				<p th:errors="*{id}">Erreur d'id</p>
+			</div>
+			<div>
+				<label for="nom">Nom :</label>
+				<input id="nom" type="text" name="nom" value="Zurgrub-4" th:value="${planete.nom}" />
+			</div>
+			<div>
+				<label for="masse">Masse :</label>
+				<input id="masse" type="text" name="masse" value="5455" th:value="${planete.masse}" />
+			</div>
+			<div>
+				<label for="periodeOrbitale">Période orbitale :</label>
+				<input id="periodeOrbitale" type="text" name="periodeOrbitale" value="45"
+					th:value="${planete.periodeOrbitale}" />
+			</div>
+			<div>
+				<input type="submit" value="sauvegarder" />
+			</div>
+		</form>
 	</div>
 </body>
 

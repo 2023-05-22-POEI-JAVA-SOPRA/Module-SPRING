@@ -10,11 +10,18 @@
 	<h1>La liste des planètes</h1>
 	<ul>
 		<li th:each="planete : ${planetes}">
-			<a href="./planete.html" 
+			<a href="./planete-detail.html" 
 				th:href="@{/planete/planete-detail(id=${planete.id})}" 
 				th:text="${planete.nom}">Saturne</a>
 		</li>
 	</ul>
+	<div>
+		<span>Créer une nouvelle planète : </span>
+		<a href="./planete-detail.html" th:href="@{/planete/create-planete}" >
+			Cliquer ici pour créer une nouvelle planète
+		</a>
+		
+	</div>
 </body>
 
 </html>
