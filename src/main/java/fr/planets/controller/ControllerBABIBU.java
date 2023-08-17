@@ -44,7 +44,9 @@ public class ControllerBABIBU {
         	ModelAndView mav = new ModelAndView();
         	mav.setViewName("planetesForm");
         	mav.addObject("newPlanete", planete);
+        	
             System.out.println("Erreur de planete, je ne sauvegarde pas.");
+            
             mav.addObject("errorString", "Erreur dans la planete !");
             
             return mav;

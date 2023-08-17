@@ -3,18 +3,19 @@ package fr.planets.model;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.Size;
 
 public class Planet {
 
 	@NotNull
 	@NotEmpty
+	@Size(min=3, message="nom trop court")
 	private String name;
 	
 	@NotNull
 	private Integer id;
 	
-	@Positive
-	@NotNull
+	@Positive(message="Le diametre doit etre positif")
 	private Integer diametre;
 	
 	
