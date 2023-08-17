@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>La page d'un camion</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+	<div>C'est la page du camion</div>
+	<div th:text="${errorString}">Erreur</div>
+	<form action="./camion" method="POST">
+		<div>
+			<label for="id">Id:</label>
+			<input id="id" type="text" name="id" value="45" th:value="${camion.id}" />
+		</div>
+		<div>
+			<label for="nom">Nom:</label>
+			<input id="nom" type="text" name="nom" value="salut" th:value="${camion.nom}" />
+		</div>
+		<div>
+			<input type="submit" value="sauvegarder" />
+		</div>
+	</form>
+</body>
+
+</html>
