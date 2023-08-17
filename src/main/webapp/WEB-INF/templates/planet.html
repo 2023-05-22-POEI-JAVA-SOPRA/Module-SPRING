@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Planètes</title>
+</head>
+<body>
+
+	<h1>Les planètes</h1>
+		
+	<p>Liste des planetes :</p>
+		<li th:each="planet : ${planets}">
+			<a href="planetdetail.html"
+			th:href="@{/planet/{id}(id=${planet.id})}"
+			th:text="${planet.name}">Le nom de ma planète.</a>
+		</li>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Coucou</title>
+</head>
+<body>
+	<h1>Coucou !</h1>
+	
+	<div th:text="${monMessage}">Quelle heure est-il ?</div>
+	
+	<div th:if="${poids>5}">
+		<p>Liste des camions :</p>
+		<li th:each="camion : ${camions}">
+			<a href="camion.html"
+			th:href="@{/camion(name=${camion.name})}"
+			th:text="${camion.name}">Le nom de mon camion.</a>
+		</li>
+	</div>
+
+	
+</body>
+</html>
