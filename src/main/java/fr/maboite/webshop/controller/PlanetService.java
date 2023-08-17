@@ -19,7 +19,7 @@ public class PlanetService {
 	public PlanetService() {
 		Planet earth = new Planet();
 		earth.setId(3);
-		earth.setName("Earth");
+		earth.setName("Terre");
 		earth.setMass(1f);
 		Planet mars = new Planet();
 		mars.setId(4);

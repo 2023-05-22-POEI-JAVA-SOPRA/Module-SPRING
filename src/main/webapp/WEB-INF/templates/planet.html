@@ -8,7 +8,7 @@
 
 	<h1>Les planètes</h1>
 		
-	<p>Liste des planetes :</p>
+	<p>Liste des planètes :</p>
 		<li th:each="planet : ${planets}">
 			<a href="planetdetail.html"
 			th:href="@{/planet/{id}(id=${planet.id})}"
