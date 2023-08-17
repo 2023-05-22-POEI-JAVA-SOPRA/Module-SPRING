@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+
+  <head>
+    <title>Formulaire des planètes</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+
+  <body>
+	  <ul>
+		<li><a href="/formation-spring-webshop/indexPlanete">Liste des planètes</a></li>
+		<li><a href="/formation-spring-webshop/planete/1">Détails des planètes (1 par défaut)</a></li>
+		<li><a href="/formation-spring-webshop/planetesForm">Formulaire</a></li>
+	</ul>
+	  
+    <h1>Formulaire planète</h1>
+    <div>
+        <form action="./planetesForm" method="POST">
+        <div>
+            <label for="name">Nom : </label>
+            <input id="name" type="text" name="name" value="name" th:value="${newPlanete.name}" />
+        </div>
+        <div>
+            <label for="id">Id : </label>
+            <input id="id" type="text" name="id" value="id" th:value="${newPlanete.id}" />
+        </div>
+        <div>
+            <input type="submit" value="Sauvegarder" />
+        </div>
+    </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/" >
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title th:if="${planete}" th:text="${planete.name}">No planet name</title>
+	<title th:unless="${planete}">Erreur</title>
+</head>
+<body>
+	<ul>
+		<li><a href="/formation-spring-webshop/indexPlanete">Liste des planètes</a></li>
+		<li><a href="/formation-spring-webshop/planete/1">Détails des planètes (1 par défaut)</a></li>
+		<li><a href="/formation-spring-webshop/planetesForm">Formulaire planètes</a></li>
+	</ul>
+	
+	<div th:unless="${planete}">
+		Pas de planète correspondante !
+		<pre>
+     ________________
+   /  ____________   \
+  / /  0         0 " \ \
+ | |           '       | |
+  \ \        ___      / /
+   \  \_____________/  /
+     \_______________/
+         /   [ ]   \
+        / /  [ ]   \ \
+       | |   [ ]   | |
+        \ \       / /
+         \_________/                           
+		</pre>
+	</div>
+	
+	<div th:if="${planete}">
+		<div>Id : </div>
+		<div th:text="${planete.id}">6</div>
+		<div>Nom : </div>
+		<div th:text="${planete.name}">Saturne</div>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,24 @@
+<html xmlns:th="https://www.thymeleaf.org">
+
+<head>
+	<title>>Index planètes </title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+	<ul>
+		<li><a href="/formation-spring-webshop/indexPlanete">Liste des planètes</a></li>
+		<li><a href="/formation-spring-webshop/planete/1">Détails des planètes (1 par défaut)</a></li>
+		<li><a href="/formation-spring-webshop/planetesForm">Formulaire</a></li>
+	</ul>
+
+	<h1>Liste des planètes </h1>
+	<ul>
+		<li th:each="planete : ${allPlanetes}">
+			<a href="detailsPlanete.html"> </a>
+			<a href="detailsPlanete.html" th:href="@{/planete/{id}(id=${planete.id})}" th:text="${planete.name}"></a>
+		</li>
+	</ul>
+</body>
+
+</html>

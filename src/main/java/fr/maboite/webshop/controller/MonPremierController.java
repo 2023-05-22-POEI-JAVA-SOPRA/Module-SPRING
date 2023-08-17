@@ -1,10 +1,11 @@
-package fr.maboite.webshop.controller.correction;
+package fr.maboite.webshop.controller;
 
 import java.util.ArrayList;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class MonPremierController {
@@ -42,7 +43,7 @@ public class MonPremierController {
 		return camion;
 	}
 
-	@RequestMapping(path = "/salut")
+	@RequestMapping(path = "/salut", method = RequestMethod.GET)
 	public String maPremiereMethodeDeController() {
 		System.out.println("Méthode sur /salut appelée");
 		return "salut";

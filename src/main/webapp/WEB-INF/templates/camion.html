@@ -1,18 +1,16 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" >
 
-<head>
-	<title>La page d'un camion</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-</head>
+  <head>
+    <title>La page Camion !</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
 
-<body>
-	<div>C'est la page du camion</div>
-	<div>Id : </div>
-	<div th:text="${camion.id}">4</div>
-	<div>Nom : </div>
-	<div th:text="${camion.nom}">GM</div>
-	<p th:text="${autreTruc}">Autre ...</p>
-</body>
-
+  <body>
+    <h1>Page des camions </h1>
+    <div> Id : </div>
+    <div th:text="${camion.id}"> </div>
+   <div> Name : </div>
+    <div th:text="${camion.name}"> </div>
+  </body>
 </html>

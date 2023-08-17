@@ -1,4 +1,4 @@
-package fr.planets.model;
+package fr.maboite.planets.model;
 
 public class Planet {
 

@@ -1,4 +1,4 @@
-package fr.maboite.webshop.controller.correction;
+package fr.maboite.webshop.controller;
 
 import java.util.Collection;
 import java.util.HashMap;
