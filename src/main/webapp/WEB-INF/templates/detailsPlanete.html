@@ -17,5 +17,24 @@
 		</ul>
 	</div>
 	
+	
+	<div th:text="${errorString}">Erreur</div>
+	<form method="POST" action="../planete" >
+		<div>
+			<label for="name">Nom</label>
+			<input id="name" type="text" name="name" th:value="${details.name}" value="nom planète"/>
+		</div>
+		<div>
+			<label for="diameter">Diamètre en km</label>
+			<input id="diameter" type="text" name="diameter" th:value="${details.diameter}" value="000000"/>
+		</div>
+		<div>
+			<label for="mainCompo">Principal élément</label>
+			<input id="mainCompo" type="text" name="mainCompo" th:value="${details.mainCompo}" value="élément principal"/>
+		</div>
+		<div>
+			<input type="submit" value="sauvegarder"/>
+		</div>
+	</form>
 </body>
 </html>
