@@ -1,9 +1,20 @@
 package fr.planets.model;
 
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
+
 public class Planet {
 
+	@NotNull
+	@NotEmpty
 	private String name;
+	
+	@NotNull
 	private Integer id;
+	
+	@Positive
+	@NotNull
 	private Integer diametre;
 	
 	

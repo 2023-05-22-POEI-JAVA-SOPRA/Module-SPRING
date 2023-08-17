@@ -50,4 +50,8 @@ public class servicePlanet {
 	public Collection<Planet> getAll() {
 		return this.planetes.values();
 	}
+	
+	public void save(Planet planete) {
+		this.planetes.put(planete.getId(), planete);
+	}
 }

@@ -9,29 +9,38 @@
   <body>
 	  <ul>
 		<li><a href="/formation-spring-webshop/planetes">planetes</a></li>
-		<li><a href="/formation-spring-webshop/detailsPlanetes">planetesDetails (1 par défaut)</a></li>
-		<li><a href="/formation-spring-webshop/planetesForm">planetesForm</a></li>
+		<li><a href="/formation-spring-webshop/detailsPlanetes/1">planetesDetails (1 par défaut)</a></li>
+		<li><a href="/formation-spring-webshop/planetesForm">Ajout Planete</a></li>
 	</ul>
+	
+	
 	  
     <h1>Sauvegarde planete</h1>
+    
+    <div th:text="${errorString}">Erreur</div>
+    
     <div>
-        <form action="./planetesForm" method="POST">
-        <div>
-            <label for="name">Nom : </label>
-            <input id="name" type="text" name="name" value="name" th:value="${newPlanete.name}" />
-        </div>
-        <div>
-            <label for="id">id : </label>
-            <input id="id" type="text" name="id" value="id" th:value="${newPlanete.id}" />
-        </div>
-        <div>
-            <label for="diametre">Diamètre (en km): </label>
-            <input id="diametre" type="text" name="diametre" value="Diametre" th:value="${newPlanete.diametre}" />
-        </div>
-        <div>
-            <input type="submit" value="sauvegarder" />
-        </div>
-    </form>
+        <form action="./planetesForm" method="POST" th:object="${newPlanete}">
+	        <div>
+	            <label for="id">id : </label>
+	            <input id="id" type="text" name="id" value="id" th:value="${newPlanete.id}" />
+	            <p th:errors="*{id}">Erreur d'id</p>
+	        </div>
+	        <div>
+	            <label for="name">Nom : </label>
+	            <input id="name" type="text" name="name" value="name" th:value="${newPlanete.name}" />
+	            <p th:errors="*{name}">Erreur de nom</p>
+	        </div>
+	        <div>
+	            <label for="diametre">Diamètre (en km): </label>
+	            <input id="diametre" type="text" name="diametre" value="Diametre" th:value="${newPlanete.diametre}" />
+	            <p th:errors="*{diametre}">Erreur de diametre</p>
+	        </div>
+	        <div>
+	            <input type="submit" value="sauvegarder" />
+	        </div>	        
+    	</form>
     </div>
+    
   </body>
 </html>
