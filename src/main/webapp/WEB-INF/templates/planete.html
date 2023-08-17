@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+
+  <head>
+    <title>La page des planètes</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+
+  <body>
+    <h1>Voici la liste des planètes du système solaire : </h1>
+	<div>
+		<ul >
+			<li th:each="planete : ${planetes}" th:text="${planete.nom}"></li>
+		</ul>
+	</div>
+  </body>
+</html>

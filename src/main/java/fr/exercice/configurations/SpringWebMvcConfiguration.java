@@ -21,6 +21,7 @@ import org.thymeleaf.templatemode.TemplateMode;
 @Configuration
 @EnableWebMvc
 @ComponentScan("fr.exercice.mvc.controller")
+@ComponentScan("fr.exercice.mvc.service")
 public class SpringWebMvcConfiguration implements WebMvcConfigurer, ApplicationContextAware {
 
 	private ApplicationContext applicationContext;
