@@ -1,13 +1,26 @@
 package fr.exercice.entity;
 
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.PositiveOrZero;
+
 public class Planete {
 
+	@NotNull
+	@NotEmpty
 	private String nom;
-
+	
+	@NotNull
+	@Min(value= 9)
 	private Integer ordre;
 
+	@NotNull
+	@PositiveOrZero
 	private long distanceDuSoleil; // en kilomètres
 
+	@NotNull
+	@PositiveOrZero
 	private long diametre; // en kilomètres
 
 	public String getNom() {
@@ -54,4 +67,10 @@ public class Planete {
 		super();
 	}
 
+	@Override
+	public String toString() {
+		return "Planete : " + nom + ", ordre : " + ordre + ", distanceDuSoleil : " + distanceDuSoleil + " km, diametre : "
+				+ diametre + "km";
+	}
+	
 }

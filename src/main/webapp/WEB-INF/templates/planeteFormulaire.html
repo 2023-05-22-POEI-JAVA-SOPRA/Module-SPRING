@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Formulaire des planètes</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+	<h1>Sauvegarde d'une nouvelle planète</h1>
+	<div th:text="${errorString}">Erreur</div>
+	<div>
+		<form action="./planeteFormulaire" method="POST" th:object="${newPlanete}">
+			<div>
+				<label for="nom">Nom : </label>
+				<input id="nom" type="text" name="nom" value="Nom" th:value="${newPlanete.nom}" />
+				<p th:errors="*{nom}">Erreur de nom</p>
+			</div>
+			<div>
+				<label for="ordre">Ordre : </label>
+				<input id="ordre" type="text" name="ordre" value="Ordre" th:value="${newPlanete.ordre}" />
+				<p th:errors="*{ordre}">Erreur d'ordre</p>
+			</div>
+			<div>
+				<label for="distanceDuSoleil">Distance au Soleil (en km): </label>
+				<input id="distanceDuSoleil" type="text" name="distanceDuSoleil" value="Distance"
+					th:value="${newPlanete.distanceDuSoleil}" />
+				<p th:errors="*{distanceDuSoleil}">Erreur de distance</p>
+			</div>
+			<div>
+				<label for="diametre">Diamètre (en km): </label>
+				<input id="diametre" type="text" name="diametre" value="Diametre" th:value="${newPlanete.diametre}" />
+				<p th:errors="*{diametre}">Erreur de diametre</p>
+			</div>
+			<div>
+				<input type="submit" value="sauvegarder" />
+			</div>
+			<h1 th:text="${'Voici le détail de la planète '} + ${newPlanete.nom}"> </h1>
+			<div>
+				<p>Nom : <span th:text="${newPlanete.nom}"> </span></p>
+				<p>Ordre par rapport au Soleil : <span th:text="${newPlanete.ordre}"></span></p>
+				<p>Sa distance (en km) au Soleil est : <span th:text="${newPlanete.distanceDuSoleil}"></span></p>
+				<p>Son diamètre (en km) : <span th:text="${newPlanete.diametre}"></span></p>
+			</div>
+		</form>
+	</div>
+</body>
+
+</html>

@@ -7,7 +7,8 @@
   </head>
 
   <body>
-    <h1>Voici la liste des planètes du système solaire : </h1>
+    <h1>Planètes du système solaire : </h1>
+    <h2>Liste : </h2>
 	<div>
 		<ul >
 			<li th:each="planete : ${planetes}">
@@ -15,5 +16,7 @@
 			</li>
 		</ul>
 	</div>
+	<h2>Formulaire de sauvegarde : </h2>
+	<a href="planeteFormulaire.html" th:href="@{/planeteFormulaire}">Vers le formulaire</a>
   </body>
 </html>

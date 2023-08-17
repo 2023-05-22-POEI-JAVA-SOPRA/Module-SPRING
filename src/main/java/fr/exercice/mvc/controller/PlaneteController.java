@@ -4,9 +4,12 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -36,4 +39,33 @@ public class PlaneteController {
 		mav.addObject("planeteDetails", ps.getById(ordre));
 		return mav;
 	}
+	
+	@GetMapping("/planeteFormulaire")
+	public ModelAndView afficheFormulairePlanete() {
+		Planete planete = new Planete("Nom",0,0,0);
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("planeteFormulaire");
+		mav.addObject("newPlanete", planete);	
+		return mav;
+	}
+	
+	@PostMapping("/planeteFormulaire")
+	public ModelAndView sauvegardePlanete(@Validated @ModelAttribute("newPlanete") Planete planete, BindingResult bindingResult) {
+			
+		if (bindingResult.hasErrors()) {
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("planeteFormulaire");
+			mav.addObject("newPlanete", planete);
+			System.out.println("Erreur de planete, je ne sauvegarde pas.");
+			mav.addObject("errorString", "Erreur dans la planete!!!");
+			return mav;
+		}
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("planeteFormulaire");
+		mav.addObject("newPlanete", planete);
+		System.out.println(planete.toString());
+		return mav;
+	}
 }
+
+
