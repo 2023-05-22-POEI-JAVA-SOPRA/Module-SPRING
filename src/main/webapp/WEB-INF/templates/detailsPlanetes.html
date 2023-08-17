@@ -7,6 +7,12 @@
 	<title th:unless="${planete}">Erreur</title>
 </head>
 <body>
+	<ul>
+		<li><a href="/formation-spring-webshop/planetes">planetes</a></li>
+		<li><a href="/formation-spring-webshop/detailsPlanetes">planetesDetails (1 par défaut)</a></li>
+		<li><a href="/formation-spring-webshop/planetesForm">planetesForm</a></li>
+	</ul>
+	
 <!--	Afficher un message si aucune planète n'est trouvé
 	permet le debugage (merci la correction Fr.C :)  )-->
 	<div th:unless="${planete}">
