@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+	
+<html>
+<head>
+    <title>Planète</span> </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+<body>
+	<div >
+		<h1>La planète</h1>
+		<ul>
+			<li>Nom: <span th:text="${details.name}"></span></li>
+			<li>Diamètre: <span th:text="${details.diameter}"></span> km</li>
+			<li>Densité: <span th:text="${details.density}"></span></li>
+			<li>Composition, principal élement: <span th:text="${details.mainCompo}"></span></li>
+		</ul>
+	</div>
+	
+</body>
+</html>

@@ -12,6 +12,11 @@
     http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
 <!-- ATTENTION vérifier qu'on a la bonne configuration on reprend le nom du package contenant le fichier de SpringConfig  -->
-	<context:component-scan  base-package="fr.maboite.webshop.spring.real.configuration" />
+	<!-- Lien ci dessous pour exo de base découverte MVC -->
+	<!-- <context:component-scan  base-package="fr.maboite.webshop.spring.real.configuration" /> -->
+	
+	<!-- Pour TP Planète -->
+	<context:component-scan  base-package="tp.planete.configuration" /> 
+	
 		
 </beans>

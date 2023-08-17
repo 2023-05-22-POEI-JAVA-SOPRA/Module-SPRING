@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+
+  <head>
+    <title>Les planètes</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+
+  <body>
+    <h1>Les planètes</h1>
+    <ul>
+		<li th:each="planete : ${lesPlanetes}">
+			<a th:href="@{'/planete/' + ${planete.name}}" th:text="${planete.name}"></a>
+		</li>
+	</ul>
+  </body>
+</html>
