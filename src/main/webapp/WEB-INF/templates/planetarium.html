@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>PLANETARIUM</title>
+</head>
+<body>
+	<h1> JE SUIS UN TITRE</h1>
+	<ul>
+		<li th:each = "planete:${planetes}" >
+			<a th:href = "@{'planetarium/'+${planete.id}}" th:text ="${planete.nom}"></a>
+			</li>
+	</ul>
+</body>
+</html>

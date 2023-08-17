@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1 th:text="${discretion}"></h1>
+	<p th:if="${houdini}">Je suis plus là</p>
+	<p th:unless="${houdini}">Je suis là</p>
+	<ol>
+		<li th:each ="camion : ${parkingCamions}" th:text ="${camion.marque}">yo</li>
+	</ol>
+</body>
+</html>
