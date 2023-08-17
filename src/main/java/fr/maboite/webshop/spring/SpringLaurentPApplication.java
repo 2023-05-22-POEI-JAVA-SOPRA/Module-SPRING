@@ -2,10 +2,10 @@ package fr.maboite.webshop.spring;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import fr.maboite.webshop.service.MonPremierDaoLP;
-import fr.maboite.webshop.service.MonPremierServiceLP;
-import fr.maboite.webshop.service.MonSecondDaoLpSERVICE;
-import fr.maboite.webshop.service.MonSecondServiceLPSERVICE;
+import fr.maboite.webshop.correction.service.simple.MonPremierDaoLP;
+import fr.maboite.webshop.correction.service.simple.MonPremierServiceLP;
+import fr.maboite.webshop.correction.service.simple.MonSecondDaoLpSERVICE;
+import fr.maboite.webshop.correction.service.simple.MonSecondServiceLPSERVICE;
 
 
 public class SpringLaurentPApplication {

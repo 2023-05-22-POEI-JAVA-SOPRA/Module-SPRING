@@ -4,16 +4,17 @@ public class Planet {
 
 	private String name;
 	private Integer id;
+	private Integer diametre;
 	
 	
-	public Planet(String name, Integer id) {
+	public Planet(String name, Integer id, Integer diametre) {
 		super();
 		this.name = name;
 		this.id = id;
+		this.diametre=diametre;
 	}
 	
 	public Planet() {
-		super();
 	}
 	
 	public String getName() {
@@ -28,10 +29,21 @@ public class Planet {
 	public void setId(Integer id) {
 		this.id = id;
 	}
+	
+
+	public Integer getDiametre() {
+		return diametre;
+	}
+
+	public void setDiametre(Integer diametre) {
+		this.diametre = diametre;
+	}
 
 	@Override
 	public String toString() {
-		return "Planete [name=" + name + ", id=" + id + "]";
+		return "Planet [name=" + name + ", id=" + id + ", diametre=" + diametre + "]";
 	}
+
+	
 	
 }

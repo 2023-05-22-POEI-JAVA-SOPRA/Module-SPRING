@@ -20,7 +20,8 @@ import org.thymeleaf.templatemode.TemplateMode;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan({"fr.maboite.webshop.mvc","fr.planets"})
+@ComponentScan("fr.maboite.webshop.mvc")
+@ComponentScan("fr.planets")
 public class SpringWebConfiguration implements WebMvcConfigurer, ApplicationContextAware {
 
 	private ApplicationContext applicationContext;

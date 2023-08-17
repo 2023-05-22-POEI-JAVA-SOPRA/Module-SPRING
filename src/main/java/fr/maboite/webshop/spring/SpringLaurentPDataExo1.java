@@ -2,8 +2,8 @@ package fr.maboite.webshop.spring;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import fr.maboite.webshop.correction.service.simple.ExampleService;
 import fr.maboite.webshop.model.Example;
-import fr.maboite.webshop.service.ExampleService;
 import fr.maboite.webshop.spring.simple.configuration.SpringSimpleConfLP;
 
 public class SpringLaurentPDataExo1{

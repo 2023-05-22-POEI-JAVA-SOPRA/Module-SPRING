@@ -5,12 +5,14 @@
 <title>Mes planètes</title>
 </head>
 <body>
-<h1>Mes planetes (elles sont toutes là hein)</h1>
+<h1>Mes planetes</h1>
 
 	<ul>
 		<li th:each="planeteTemp:${maListePlanete}" 
-		th:text="${planeteTemp.name}"><a></a></li>
+		><a th:text="${planeteTemp.name}"
+		>abc</a></li>
+		<!--Le th:href qui casse tout, je n'arrive pas a faire la suite-->
+		<!--th:href="@{/planetes/(id=${planetTemp.id})}"-->
 	</ul>
-
 </body>
 </html>

@@ -12,8 +12,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 
-import fr.maboite.webshop.model.ExampleSpringDao;
-import fr.maboite.webshop.service.MonPremierServiceLP;
+import fr.maboite.webshop.correction.service.simple.MonPremierServiceLP;
 
 @EnableJpaRepositories("fr.maboite.webshop.model")
 

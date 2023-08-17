@@ -2,7 +2,6 @@ package fr.maboite.webshop.spring;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import fr.maboite.webshop.service.MonPremierServiceLP;
 import fr.maboite.webshop.spring.simple.configuration.SpringSimpleConfLP;
 
 public class SpringLaurentApplicationExo2 {
