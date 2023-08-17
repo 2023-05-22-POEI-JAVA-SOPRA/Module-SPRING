@@ -6,9 +6,8 @@
 </head>
 <body>
 	<div>C'est la page de la planète</div>
-	<div>Id : </div>
-	<div th:text="${planet.id}">0</div>
-	<div>Nom : </div>
-	<div th:text="${planet.name}"> </div>
+	<div>Id : <span th:text="${planet.id}">0</span></div>
+	<div>Nom : <span th:text="${planet.name}">Nom de la planète</span></div>
+	<div>Masse : <span th:text="${planet.mass}">Masse de la planète</span> m<sub>T</sub></div>
 </body>
 </html>

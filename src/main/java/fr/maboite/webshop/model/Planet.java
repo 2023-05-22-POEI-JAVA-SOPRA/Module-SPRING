@@ -6,13 +6,13 @@ public class Planet {
 	
 	private String name;
 	
-	private Integer mass;
+	private Float mass;
 
 	public Planet() {
 		super();
 	}
 
-	public Planet(Integer id, String name, Integer mass) {
+	public Planet(Integer id, String name, Float mass) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -36,11 +36,11 @@ public class Planet {
 		this.name = name;
 	}
 
-	public Integer getMass() {
+	public Float getMass() {
 		return mass;
 	}
 
-	public void setMass(Integer mass) {
+	public void setMass(Float mass) {
 		this.mass = mass;
 	}
 
