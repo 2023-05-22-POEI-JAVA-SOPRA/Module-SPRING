@@ -10,7 +10,7 @@
     <h1>Les planètes</h1>
     <ul>
 		<li th:each="planete : ${lesPlanetes}">
-			<a th:href="@{'/planete/' + ${planete.name}}" th:text="${planete.name}"></a>
+			<a th:href="@{'/planete/' + ${planete.id}}" th:text="${planete.name}"></a>
 		</li>
 	</ul>
   </body>
