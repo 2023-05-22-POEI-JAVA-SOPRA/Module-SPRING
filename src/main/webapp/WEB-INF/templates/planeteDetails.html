@@ -1,5 +1,5 @@
 <head>
-	<title>Détails de la planette </title>
+	<title>Détails de la planete </title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 
@@ -19,6 +19,37 @@
 		There is no planet for this index !!
 	</div>
 
+
+	<h2> Formulaire de modificaton</h2>
+	<form method="post" action="planete" th:action="@{/planete}" th:object="${planete}">
+
+		<div th:if="${planete}">
+			<label for="id"> Id : </label>
+			<input type="text" id="id" name="id" th:value="${planete.id}" />
+			<br>
+			<label for="name"> Name : </label>
+			<input id="name" name="name" type="text" th:value="${planete.name}" />
+			<br>
+			<label for="weight"> Weight in (Earth) : </label>
+			<input id="weight" name="weight" type="number" step="0.01" th:value="${planete.weight}" />
+			<br>
+			<label for="distanceFromEarth"> Distance from Earth (millions km): </label>
+			<input id="distanceFromEarth	" name="distanceFromEarth" type="number" step="0.01"
+				th:value="${planete.distanceFromEarth}" />
+			<input type="submit" value="Save" />
+		</div>
+		<ul th:if="${#fields.hasErrors('*')}">
+			<li th:each="err : ${#fields.errors('*')}" th:text="${err}">Erreur</li>
+		</ul>
+	</form>
+
+
+	<div th:if="!${planete}">
+		There is no planet for this index !!
+	</div>
+
+	<br />
+	<a href="./../indexPlanete" th:href="@{/indexPlanete}">retour à l'index des planètes</a>
 </body>
 
 </html>

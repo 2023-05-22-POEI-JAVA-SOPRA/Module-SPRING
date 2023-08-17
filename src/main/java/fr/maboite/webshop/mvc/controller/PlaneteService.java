@@ -39,13 +39,35 @@ public class PlaneteService {
 	public Planete getPlaneteById(Integer id) {
 
 		try {
-			return listePlanets.get(id);
+			return listePlanets.stream().filter(p -> p.getId() == id).findFirst()
+					.orElse(null);
 		} catch (Exception e) {
 			System.out.println("Error : " + e.getMessage());
 			return null;
 		}
 
 //		return listePlanets.get(id) != null ? listePlanets.get(id) : null;
+	}
+
+	public Planete save(Planete planete) {
+		Planete planetToModify = new Planete();
+		try {
+			if (planete.getId() >= 0) {
+
+				planetToModify = listePlanets.stream().filter(p -> p.getId() == planete.getId()).findFirst()
+						.orElse(null);
+				planetToModify.setDistanceFromEarth(planete.getDistanceFromEarth());
+				planetToModify.setWeight(planete.getWeight());
+				planetToModify.setId(planete.getId());
+				planetToModify.setName(planete.getName());
+			}
+
+		} catch (Exception e) {
+			System.out.println("Error : " + e.getMessage());
+			return null;
+		}
+		return planetToModify;
+
 	}
 
 }
