@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import tp.planete.entity.Planete;
 import tp.planete.service.PlaneteService;
@@ -26,15 +26,8 @@ public class PlaneteController {
 
 //Recherche par l'id de la planète
 //	Avec ModelAttribute ne pas utiliser @PathVariable mais @RequestParam
-	@ModelAttribute("details")
-	public Planete recupereDetailPlanete(@RequestParam(name="id", required = false) Integer id){
-		if (id != null) {
-	        Planete unePlanete = planeteService.getById(id);
-	        return unePlanete;
-	    }
-	    return null;
-	}
-	
+
+
 //	Recherche par le nom de la planète
 //	@ModelAttribute("details")
 //	public Planete recupereDetailPlanete(@PathVariable String name){
@@ -57,9 +50,10 @@ public class PlaneteController {
 	
 //	Mapping avec url ID
 	@RequestMapping("/planete/{idPlanete}")
-	public String DetailsMethodeDeController(@PathVariable("idPlanete") Integer id) {
+	public ModelAndView DetailsMethodeDeController(@PathVariable("idPlanete") Integer id) {
+		ModelAndView mav = new ModelAndView("detailsPlanete", "details", planeteService.getById(id));
 		System.out.println("recherche par id");
-		return "detailsPlanete";
+		return mav;
 	}
 	
 }
