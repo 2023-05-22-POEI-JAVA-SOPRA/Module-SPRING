@@ -21,7 +21,7 @@ public class PlaneteController {
 	{
 		
 		List<Planete> allPlanetes = planeteService.getAllPlanetes();
-		System.out.println(" indexPlanette in controller called");
+		System.out.println(" /indexPlanete in controller called");
 		return new ModelAndView("indexPlanete","allPlanetes",allPlanetes);
 		
 	}
@@ -31,7 +31,7 @@ public class PlaneteController {
 	{
 		
 		Planete planete = planeteService.getPlaneteById(id);
-		System.out.println(" planete in controller called");
+		System.out.println(" /planete in controller called");
 		return new ModelAndView("planeteDetails","planete",planete);
 		
 	}
@@ -41,7 +41,7 @@ public class PlaneteController {
 	{
 		
 		Planete planete = planeteService.getPlaneteById(id);
-		System.out.println(" planete in controller called");
+		System.out.println(" /planete/{id} in controller called");
 		return new ModelAndView("planeteDetails","planete",planete);
 		
 	}
