@@ -7,6 +7,7 @@ public class Planete {
 	private int masse;
 	
 	
+	
 	public int getMasse() {
 		return masse;
 	}
@@ -25,6 +26,15 @@ public class Planete {
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
+	public Planete(int id, String nom) {
+		super();
+		this.id = id;
+		this.nom = nom;
+	}
+	
+	
+	
+	
 	
 	
 

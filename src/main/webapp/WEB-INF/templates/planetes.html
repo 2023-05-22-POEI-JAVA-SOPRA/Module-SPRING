@@ -12,8 +12,8 @@
 	<div>
 <ul>
 		<li th:each="planete : ${planetes}">
-			<a href="planetes.html" 
-				th:href="@{/planetes(id=${planete.id}}">lien
+			<a href="planete.html" 
+				th:href="@{/planetes(id=${planete}}" th:text"${planete.nom}">lien
 				</a>
 		</li>
 	</ul>
