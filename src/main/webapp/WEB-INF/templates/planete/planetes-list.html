@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Toutes les planètes (sauf Pluton, lol)</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+	<h1>La liste des planètes</h1>
+	<ul>
+		<li th:each="planete : ${planetes}">
+			<a href="./planete.html" 
+				th:href="@{/planete/planete-detail(id=${planete.id})}" 
+				th:text="${planete.nom}">Saturne</a>
+		</li>
+	</ul>
+</body>
+
+</html>

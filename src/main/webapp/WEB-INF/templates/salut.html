@@ -1,18 +1,37 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" >
+<html xmlns:th="http://www.thymeleaf.org">
 
-  <head>
-    <title>Ma première page Thymeleaf !</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  </head>
+<head>
+	<title>Ma première page Thymeleaf !</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
 
-  <body>
-    <h1>Salut les gens</h1>
-    <div>
-    	<p>Message : </p>
-    	<p th:text="${monMessage}">Ici, le message</p>
+<body>
+	<h1>Salut les gens</h1>
+	<div>
+		<p>Message : </p>
+		<p th:text="${monMessage}">Ici, le message</p>
 	</div>
-    	<p>Nom du camion : </p>
-	    <div th:text="${camion.nom}">Ici, le nom du camion</div>
-  </body>
+
+	<div th:if="${poids < 4}">
+		<p>Nom du camion : </p>
+		<div th:text="${camion.nom}">Ici, le nom du camion</div>
+	</div>
+
+	<div>Ci-dessous la liste des camions :</div>
+	<ul>
+		<li th:each="camionTemporaire : ${camions}">
+			<a href="camion.html" 
+				th:href="@{/camion(id=${camionTemporaire.id})}" 
+				th:text="${camionTemporaire.nom}">Nom du camion</a>
+		</li>
+	</ul>
+
+	<div>Amusons-nous avec les hyperliens :</div>
+	<p>
+		<a href="camion.html" th:href="@{/camion(id=${monMessage})}">La page des camions</a>
+	</p>
+	</div>
+</body>
+
 </html>
