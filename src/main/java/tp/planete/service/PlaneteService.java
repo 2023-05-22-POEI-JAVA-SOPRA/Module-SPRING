@@ -64,4 +64,8 @@ public class PlaneteService {
 	public Collection<Planete> getAll() {
 		return this.planetes.values();
 	}
+	
+	public void save(Planete planete) {
+		this.planetes.put(planete.getId(), planete);
+	}
 }

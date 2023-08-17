@@ -19,14 +19,22 @@
 	
 	
 	<div th:text="${errorString}">Erreur</div>
-	<form method="POST" action="../planete" >
+	<form method="POST" action="../planete" th:object="${details}">
+		
+		<div>
+			<label for="id">id</label>
+			<input id="id" type="text" name="id" th:value="${details.id}" value="id"/>
+			<p th:errors="*{id}">Erreur id</p>
+		</div>
 		<div>
 			<label for="name">Nom</label>
 			<input id="name" type="text" name="name" th:value="${details.name}" value="nom planète"/>
+			<p th:errors="*{name}">Erreur dans le nom de la planète</p>
 		</div>
 		<div>
 			<label for="diameter">Diamètre en km</label>
 			<input id="diameter" type="text" name="diameter" th:value="${details.diameter}" value="000000"/>
+			<p th:errors="*{diameter}">Erreur dans la valeur saisie</p>
 		</div>
 		<div>
 			<label for="mainCompo">Principal élément</label>

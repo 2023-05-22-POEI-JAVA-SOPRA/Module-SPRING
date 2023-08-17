@@ -37,7 +37,7 @@ public class PlaneteController {
 
 	@RequestMapping("/planetes")
 	public String PlaneteMethodeDeController() {
-		System.out.println("Méthode sur /planete appelée");
+		System.out.println("Méthode sur /planetes appelée");
 		return "planetes";
 	}
 

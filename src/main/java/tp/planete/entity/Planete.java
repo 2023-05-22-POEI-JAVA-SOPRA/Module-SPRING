@@ -1,16 +1,31 @@
 package tp.planete.entity;
 
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.Size;
+
 public class Planete {
 	
-	public Integer id;
 	
-	public String name;
-	
-	public Integer diameter;
-	
-	public float density;
-	
-	public String mainCompo;
+    private Integer id;
+    
+    @NotNull
+    @NotEmpty
+    @Size(min = 1, max = 20)
+    private String name;
+    
+    @Positive
+    @Max(value = 1500000)
+    private Integer diameter;
+    
+
+    private float density;
+    
+    @NotNull
+    @Size(min = 1, max = 10)
+    private String mainCompo;
 
 	public Integer getId() {
 		return id;

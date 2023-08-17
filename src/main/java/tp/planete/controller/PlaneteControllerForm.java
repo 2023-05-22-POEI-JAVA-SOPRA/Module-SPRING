@@ -3,6 +3,7 @@ package tp.planete.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,16 +33,31 @@ public class PlaneteControllerForm {
 	}
 	
 	@PostMapping("/planete")
-	public ModelAndView saveFormPlanete(@ModelAttribute("planete") Planete planete, BindingResult bResult) {
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("detailsPlanete");
-		mav.addObject("details", planete);
-		
+	public ModelAndView saveFormPlanete(@Validated @ModelAttribute("details") Planete planete, BindingResult bResult) {
+//		ModelAndView mav = new ModelAndView();
+//		mav.setViewName("detailsPlanete");
+//		mav.addObject("details", planete);
+//		
+//		if (bResult.hasErrors()) {
+//			System.out.println("Erreur de saisie, je ne sauvegarde pas.");
+//			mav.addObject("errorString", "Erreur dans la saisie!!!");
+//			return mav;
+//		}
 		if (bResult.hasErrors()) {
-			System.out.println("Erreur de saisie, je ne sauvegarde pas.");
-			mav.addObject("errorString", "Erreur dans la saisie!!!");
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("/detailsPlanete");
+			mav.addObject("details", planete);
+			System.out.println("je ne sauvegarde pas.");
+			mav.addObject("errorString", "Erreur dans la planete!!!");
+			return mav;
+		} else {
+			this.planeteService.save(planete);
 		}
 
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("redirect:/planete?id=" + planete.getId());
+		mav.addObject("details", planete);
 		return mav;
+
 	}
 }
