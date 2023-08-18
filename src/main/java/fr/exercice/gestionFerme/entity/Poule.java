@@ -1,6 +1,6 @@
 package fr.exercice.gestionFerme.entity;
 
-public class Poule extends Animal{
+public class Poule extends Animal implements Pondeur {
 
 	public Poule(String nom) {
 		super(nom);
@@ -11,5 +11,4 @@ public class Poule extends Animal{
 		return super.crie() + "Cot Cot";
 	}
 
-	
 }

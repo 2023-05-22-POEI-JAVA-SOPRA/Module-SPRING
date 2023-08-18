@@ -10,5 +10,8 @@ public class accueilFerme {
 		Mouton mouton = new Mouton("Boufcool");
 		maFerme.animaux.add(mouton);
 		System.out.println(maFerme.toutLeMondeCrie());
+		
+		mouton.traire();
+		mouton.tondre();
 	}
 }

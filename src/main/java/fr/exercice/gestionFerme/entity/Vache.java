@@ -1,7 +1,7 @@
 package fr.exercice.gestionFerme.entity;
 
-public class Vache extends Animal{
-	
+public class Vache extends Animal implements Trayable {
+
 	public Vache(String nom) {
 		super(nom);
 	}
@@ -10,6 +10,5 @@ public class Vache extends Animal{
 	public String crie() {
 		return super.crie() + "Meeeeuuuuuuuuh";
 	}
-	
-	
+
 }
