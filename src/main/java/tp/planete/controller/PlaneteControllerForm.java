@@ -34,6 +34,8 @@ public class PlaneteControllerForm {
 	
 	@PostMapping("/planete")
 	public ModelAndView saveFormPlanete(@Validated @ModelAttribute("details") Planete planete, BindingResult bResult) {
+//		ATTENTION dans @ModelAttribut on doit retrouver notre objet (ici details)
+		
 //		ModelAndView mav = new ModelAndView();
 //		mav.setViewName("detailsPlanete");
 //		mav.addObject("details", planete);

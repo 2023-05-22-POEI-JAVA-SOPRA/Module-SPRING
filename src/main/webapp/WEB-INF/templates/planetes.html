@@ -2,12 +2,12 @@
 <html xmlns:th="http://www.thymeleaf.org" >
 
   <head>
-    <title>Les planètes</title>
+    <title th:text="#{planet.head.title}">Les planètes</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   </head>
 
   <body>
-    <h1>Les planètes</h1>
+    <h1 th:text="#{planet.page.title}">Les planètes</h1>
     <ul>
 		<li th:each="planete : ${lesPlanetes}">
 			<a th:href="@{'/planete/' + ${planete.id}}" th:text="${planete.name}"></a>

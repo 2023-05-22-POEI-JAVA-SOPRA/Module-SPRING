@@ -29,7 +29,9 @@
 		<div>
 			<label for="name">Nom</label>
 			<input id="name" type="text" name="name" th:value="${details.name}" value="nom planète"/>
-			<p th:errors="*{name}">Erreur dans le nom de la planète</p>
+			<!--<p th:errors="*{name}">Erreur dans le nom de la planète</p>-->
+			<!--avec la ligne ci dessus les erreurs apparaissent sous chaque champ
+			si on utiliser le #fields.hasErrors on a toutes les erreurs au meme endroit-->
 		</div>
 		<div>
 			<label for="diameter">Diamètre en km</label>
@@ -43,6 +45,9 @@
 		<div>
 			<input type="submit" value="sauvegarder"/>
 		</div>
+		<ul th:if="${#fields.hasErrors('*')}">
+			<li th:each="err : ${#fields.errors('*')}" th:text="${err}">erreurs</li>
+		</ul>
 	</form>
 </body>
 </html>
