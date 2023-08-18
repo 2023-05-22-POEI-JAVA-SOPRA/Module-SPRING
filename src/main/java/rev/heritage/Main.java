@@ -8,4 +8,5 @@ public class Main {
 	        farm.addAnimal(new Sheep("Bouboule"));
 
 	        farm.toutLeMondeCrie();
+	 }
 }

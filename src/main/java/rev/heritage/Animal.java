@@ -11,6 +11,13 @@ public class Animal {
 		this.name = name;
 	}
 	
+	
+	
+	public Animal(String name) {
+		super();
+		this.name = name;
+	}
+
 	public String sound() {
         return "cri de l'animal";
     }

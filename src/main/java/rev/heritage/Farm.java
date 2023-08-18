@@ -1,19 +1,24 @@
 package rev.heritage;
 
-import java.util.Collection;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Farm {
-	private Collection<Animal> animals;
+	private List<Animal> animals;
 
-	public Collection<Animal> getAnimals() {
+	public List<Animal> getAnimals() {
 		return animals;
 	}
 
-	public void setAnimals(Collection<Animal> animals) {
+	 public Farm() {
+	        animals = new ArrayList<>();
+	    }
+	 
+	public void setAnimals(List<Animal> animals) {
 		this.animals = animals;
 	}
 
-	public Farm(Collection<Animal> animals) {
+	public Farm(List<Animal> animals) {
 		this.animals = animals;
 	}
 	
