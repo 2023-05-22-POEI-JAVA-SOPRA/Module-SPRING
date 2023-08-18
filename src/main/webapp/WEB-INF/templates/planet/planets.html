@@ -8,12 +8,16 @@
 
 	<h1>Les planètes</h1>
 		
-	<p>Liste des planètes :</p>
+	<p>Liste des planètes :
 		<li th:each="planet : ${planets}">
-			<a href="planetdetail.html"
-			th:href="@{/planet/{id}(id=${planet.id})}"
+			<a href="./planet-detail.html"
+			th:href="@{/planet/planet-detail/{id}(id=${planet.id})}"
 			th:text="${planet.name}">Le nom de ma planète.</a>
 		</li>
-
+	</p>
+	
+	<a href="./planet-detail.html" th:href="@{/planet/planet-detail/save}">Ajouter une planète</a>
+	
+	
 </body>
 </html>

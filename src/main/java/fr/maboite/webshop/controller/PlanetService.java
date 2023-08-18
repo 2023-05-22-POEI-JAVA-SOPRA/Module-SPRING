@@ -13,8 +13,7 @@ public class PlanetService {
 //	@Autowired
 //	private PlanetDao planetDao;
 	
-	private Map<Integer, Planet> planets = new HashMap<>();
-	
+	private Map<Integer, Planet> planets = new HashMap<>();	
 	
 	public PlanetService() {
 		Planet earth = new Planet();
@@ -65,6 +64,10 @@ public class PlanetService {
 	
 	public Planet getPlanetById(Integer id) {
 		return this.planets.get(id);
+	}
+
+	public void savePlanet(Planet planet) {
+		this.planets.put(planet.getId(),planet);
 	}
 	
 }

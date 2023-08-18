@@ -1,11 +1,18 @@
 package fr.maboite.webshop.model;
 
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
+
 public class Planet {
 
+	@NotNull @Positive
 	private Integer id;
 	
+	@NotEmpty
 	private String name;
 	
+	@NotNull @Positive
 	private Float mass;
 
 	public Planet() {

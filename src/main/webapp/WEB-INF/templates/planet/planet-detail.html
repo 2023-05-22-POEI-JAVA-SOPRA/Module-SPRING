@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title th:text="${planet.name}">Détails de la planète</title>
+</head>
+<body>
+	
+	<div th:text="${errorString}">Erreur</div>
+	
+	<p>	
+		<div>C'est la page de la planète <span th:text="${planet.name}">Nom de la planète</span> :</div>
+		<div>Position par rapport au Soleil : <span th:text="${planet.id}">0</span></div>
+		<div>Masse : <span th:text="${planet.mass}">Masse de la planète</span> m<sub>T</sub></div>
+	
+		<form action="../planet-detail/error" method="POST" th:object="${planet}">
+			<label for="id">Id : </label><input id="id" type="number" name="id" th:value="${planet.id}"/>
+			<p th:errors="*{id}">Erreur id</p>
+			<label for="name">Nom : </label><input id="name" type="text" name="name" th:value="${planet.name}"/>
+			<p th:errors="*{name}">Erreur nom</p>
+			<label for="mass">Masse : </label><input id="mass" type="number" step=0.001 name="mass" th:value="${planet.mass}"/>
+			<p th:errors="*{mass}">Erreur masse</p>
+			<input type="submit" value="Sauvegarder">
+		</form>
+		
+	</p>
+	
+	
+</body>
+</html>
