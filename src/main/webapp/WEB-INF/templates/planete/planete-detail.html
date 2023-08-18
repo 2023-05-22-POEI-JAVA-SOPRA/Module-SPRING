@@ -27,11 +27,13 @@
 			<div>
 				<label for="masse">Masse :</label>
 				<input id="masse" type="text" name="masse" value="5455" th:value="${planete.masse}" />
+				<p th:errors="*{masse}">Erreur de masse</p>
 			</div>
 			<div>
 				<label for="periodeOrbitale">Période orbitale :</label>
 				<input id="periodeOrbitale" type="text" name="periodeOrbitale" value="45"
 					th:value="${planete.periodeOrbitale}" />
+				<p th:errors="*{periodeOrbitale}">Erreur de période orbitale</p>
 			</div>
 			<div>
 				<input type="submit" value="sauvegarder" />

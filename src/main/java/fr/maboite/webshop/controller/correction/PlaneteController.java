@@ -54,8 +54,9 @@ public class PlaneteController {
 
 		if (bindingResult.hasErrors()) {
 			ModelAndView mav = new ModelAndView();
-			mav.setViewName("/planete/planete-detail");
+			mav.setViewName("/planete/planete-error");
 			mav.addObject("planete", planete);
+
 			System.out.println("Erreur de planete, je ne sauvegarde pas.");
 			mav.addObject("errorString", "Erreur dans la planete!!!");
 			return mav;
@@ -64,7 +65,7 @@ public class PlaneteController {
 		}
 
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("redirect:/planete/planete-detail?id=" + planete.getId());
+		mav.setViewName("redirect:/planete/tout-va-bien" + planete.getId());
 		mav.addObject("planete", planete);
 		return mav;
 	}

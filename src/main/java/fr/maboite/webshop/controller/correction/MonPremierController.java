@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class MonPremierController {
@@ -43,9 +44,9 @@ public class MonPremierController {
 	}
 
 	@RequestMapping(path = "/salut")
-	public String maPremiereMethodeDeController() {
+	public ModelAndView maPremiereMethodeDeController() {
 		System.out.println("Méthode sur /salut appelée");
-		return "salut";
+		return new ModelAndView("salut");
 	}
 
 }

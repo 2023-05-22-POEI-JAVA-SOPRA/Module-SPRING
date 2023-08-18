@@ -2,19 +2,19 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<title>Ma première page Thymeleaf !</title>
+	<title th:text="#{salut.title}">Ma première page Thymeleaf !</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 
 <body>
 	<h1>Salut les gens</h1>
 	<div>
-		<p>Message : </p>
+		<p th:text="#{salut.accueil.message}">Message : </p>
 		<p th:text="${monMessage}">Ici, le message</p>
 	</div>
 
 	<div th:if="${poids < 4}">
-		<p>Nom du camion : </p>
+		<p th:text="#{salut.camion.nom}">Nom du camion : </p>
 		<div th:text="${camion.nom}">Ici, le nom du camion</div>
 	</div>
 
