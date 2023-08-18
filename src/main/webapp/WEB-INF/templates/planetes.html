@@ -2,13 +2,13 @@
 <html xmlns:th="http://www.thymeleaf.org" >
 
   <head>
-    <title>La page des planètes</title>
+    <title th:text="#{planet.title}"></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   </head>
 
   <body>
-    <h1>Planètes du système solaire : </h1>
-    <h2>Liste : </h2>
+    <h1 th:text="#{planet.1}"></h1>
+    <h2 th:text="#{planet.1.1}"></h2>
 	<div>
 		<ul >
 			<li th:each="planete : ${planetes}">
@@ -16,7 +16,7 @@
 			</li>
 		</ul>
 	</div>
-	<h2>Formulaire de sauvegarde : </h2>
-	<a href="planeteFormulaire.html" th:href="@{/planeteFormulaire}">Vers le formulaire</a>
+	<h2 th:text="#{planet.1.2}"></h2>
+	<a href="planeteFormulaire.html" th:href="@{/planeteFormulaire}" th:text="#{planet.1.2.lien}"></a>
   </body>
 </html>

@@ -54,8 +54,8 @@ public class PlaneteController {
 			
 		if (bindingResult.hasErrors()) {
 			ModelAndView mav = new ModelAndView();
-			mav.setViewName("planeteFormulaire");
-			mav.addObject("newPlanete", planete);
+			mav.setViewName("planeteFormulaire"); //nom de la vue (page html)
+			mav.addObject("newPlanete", planete); //nom du mlodel attribute et valeur de l'object
 			System.out.println("Erreur de planete, je ne sauvegarde pas.");
 			mav.addObject("errorString", "Erreur dans la planete !");
 			return mav;
