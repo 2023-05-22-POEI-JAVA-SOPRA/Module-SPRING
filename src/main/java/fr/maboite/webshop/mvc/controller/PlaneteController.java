@@ -67,7 +67,8 @@ public class PlaneteController {
 			planeteService.save(planete);
 		}
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("redirect:/planete?id=" + planete.getId());
+	//	mav.setViewName("redirect:/planete?id=" + planete.getId());
+		mav.setViewName("redirect:/planete/" + planete.getId());
 		mav.addObject("planete", planete);
 		System.out.println("Save Done");
 		return mav;
